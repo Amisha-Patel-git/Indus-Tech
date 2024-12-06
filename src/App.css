@@ -142,6 +142,8 @@ background-image: url("https://transparenttextures.com/patterns/binding-light.pn
     background-color: transparent;
     padding-top: 100px;
 }
+.py-5 {
+    padding-top: 5rem !important;}
 
 .vision-text{
     padding-right: 50px;
