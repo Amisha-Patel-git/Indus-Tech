@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Player } from '@lottiefiles/react-lottie-player';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 
 // import SignUp from "./pages/SignUp";
 // import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -126,6 +127,33 @@ function App() {
     setPasswordError("");
     alert("Sign Up successful!");
     closeAuthPopup();
+  };
+
+  const handelQuerySubmit=(e)=>{
+    e.preventDefault();
+    const name=document.getElementById("queryName").value;
+    const email=document.getElementById("queryEmail").value;
+    const phone=document.getElementById("queryPhone").value;
+    const message=document.getElementById("queryMessage").value;
+    emailjs.send(
+      "service_1uqy3uw",
+      "template_tzm0oxn",
+      {name, email, phone, message},
+      "bb5-fCrdgOphgHy-2"
+    )
+    .then(
+      (response)=>{
+        alert("Query sent successfully!");
+        document.getElementById("queryName").value="";
+        document.getElementById("queryEmail").value="";
+        document.getElementById("queryPhone").value="";
+        document.getElementById("queryMessage").value="";
+      },
+      (error)=>{
+        console.error("Emailjs error:", error);
+        alert("Failed to send query. Please try again.");
+      }
+    );
   };
 
   const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
@@ -366,13 +394,14 @@ function App() {
               <div className="popup-right">
                 <h2>Register with Us</h2>
                 <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    handleLogin();
-                    handleSignUpValidation();
-                    // handelQuerySubmit();
-                  }}>
-                  <input type="text" placeholder="Name" required />
+                  // onSubmit={(e) => {
+                  //   e.preventDefault();
+                  //   handleLogin();
+                  //   handleSignUpValidation();
+                  //   handelQuerySubmit(e);
+                  // }}
+                  onSubmit={handelQuerySubmit}>
+                  {/* <input type="text" placeholder="Name" required />
                   <input type="email" placeholder="Email" required />
                   <input type="tel" placeholder="Phone" required />
                   <input type="password" id="password" placeholder="Password" required />
@@ -382,9 +411,9 @@ function App() {
                     placeholder="Confirm Password"
                     required />
                   {passwordError && <p className="error">{passwordError}</p>}
-                  <button type="submit" className="btn-submit">Sign Up</button>
-                  {/* <input type="text" placeholder="Name" required />
-                  <input type="tel" placeholder="Phone" required />
+                  <button type="submit" className="btn-submit">Sign Up</button> */}
+                  <input type="text" placeholder="Name" id="queryName" required />
+                  <input type="tel" placeholder="Phone" id="queryPhone" required />
                   <input
                     type="email"
                     placeholder="Your Email"
@@ -397,7 +426,7 @@ function App() {
                     rows="5"
                     required
                   ></textarea>
-                  <button type="submit" className="btn-submit">Submit</button> */}
+                  <button type="submit" className="btn-submit">Submit</button>
                 </form>
               </div>
             </div>
