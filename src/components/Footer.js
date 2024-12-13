@@ -10,43 +10,68 @@ const Footer = ({ isDarkMode, toggleTheme }) => {
     <>
       <style>
         {`
-        .switch{
+        .footer-section{
+    background-color: #fefefe;
+    padding: 20px;
     position: relative;
-    display: inline-block;
-    width: 34px;
-    height: 20px;
-    margin-left: 10px;
+    font-size: 0.9rem;
+    
 }
-.switch input{
-    display: none;
+
+.footer-divider{
+    border-top: 2px solid #e63946;
+    margin-bottom: 15px;
 }
-.slider{
-    position: absolute;
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.footer-left,
+.footer-middle,
+.footer-right{
+    flex: 1
+}   
+
+.footer-left p{
+    margin: 0;
+    color: #333;
+}
+
+.footer-middle{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-middle .clickable{
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 34px;
+    color: #e63946;
+    text-decoration: underline;
 }
-.slider::before{
-    position: absolute;
-    content: "";
-    height: 14px;
-    width: 14px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
+
+.footer-middle .clickable:hover{
+    text-decoration: none;
 }
-input:checked+.slider{
-    background-color: #2196f3;
+
+.footer-right{
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
 }
-input:checked+.slider:before{
-    transform: translateX(14px);
+
+.footer-right a{
+    color: #e63946;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.footer-right a:hover{
+    text-decoration: underline;
 }
         `}
       </style>
@@ -63,11 +88,6 @@ input:checked+.slider:before{
           </div>
 
           <div className="footer-right">
-            <p>Current Mode:{isDarkMode ? 'Dark' : 'Light'}</p>
-            <label className="switch">
-              <input type="checkbox" checked={isDarkMode} onChange={toggleTheme} />
-              <span className="slider round"></span>
-            </label>
             <a href="https://x.com/Industech_RMC" target="_blank" rel="noopener noreferrer">
               <i className="social-icon x-icon"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
 <path d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"></path>
@@ -90,12 +110,6 @@ input:checked+.slider:before{
             </a>
           </div>
         </div>
-
-        {/* <div id="popup" className="popup hidden">
-            <span className="popup-close" onClick={closePopup}>&times;</span>
-            <h3 id="popup-title"></h3>
-            <p id="popup-body"></p>
-          </div> */}
       </section>
     </>
   )

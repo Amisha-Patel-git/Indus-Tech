@@ -1,5 +1,4 @@
 import { Player } from "@lottiefiles/react-lottie-player";
-import { Collapse } from "bootstrap";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 

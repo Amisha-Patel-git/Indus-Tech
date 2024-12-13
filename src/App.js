@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { Player } from '@lottiefiles/react-lottie-player';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Header from "./components/Header";
 import AboutUs from "./components/AboutUs";
@@ -18,12 +17,6 @@ import Vision from "./components/Vision";
 
 
 function App() {
-
-  const [isDarkMode, setIsDarkMode]=useState(false);
-  const toggleTheme=()=>{
-    setIsDarkMode((prevMode)=>!prevMode);
-  };
-
 
   const [festivalName, setFestivalName] = useState('');
 
@@ -77,46 +70,25 @@ function App() {
     fetchHolidayData();
   }, []);
 
-  const [popupContent, setPopupContent] = useState({ title: "", body: "" });
-  const [isPopupVisible, setPopupVisible] = useState(false);
-  const openPopup = (contentType) => {
-    if (contentType === "Privacy Policy") {
-      setPopupContent({
-        title: "Privacy Policy",
-        body: "Here you can include the content."
-      });
-    } else if (contentType === "Terms & Conditions") {
-      setPopupContent({
-        title: "Terms & Conditions",
-        body: "Here you can include the content."
-      });
-    }
-    setPopupVisible(true);
-  };
-  const closePopup = () => {
-    setPopupVisible(false);
-  };
+
 
   return (
     
     <Router>
-      <div className={`App ${isDarkMode?'dark-mode':'light-mode'}`}>
+      <div className="App">
         <Header />
         <Routes>
         <Route path="/" element={<div><Vision /><Offer /><Values /></div>} />
         
-
-        
-         
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/products" element={<Products />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/termsconditions" element={<TermsConditions />} />
-          <Route path="/structuredsolutions" element={<div>StructuredSolutions</div>} />
+          <Route path="/structuredsolutions" element={<StructuredSolutions />} />
         </Routes>
-        <Footer isDarkMode={isDarkMode} toggleTheme={toggleTheme}  />
+        <Footer />
 
       </div>
     </Router >
