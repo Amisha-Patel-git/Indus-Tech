@@ -19,6 +19,12 @@ import Vision from "./components/Vision";
 
 function App() {
 
+  const [isDarkMode, setIsDarkMode]=useState(false);
+  const toggleTheme=()=>{
+    setIsDarkMode((prevMode)=>!prevMode);
+  };
+
+
   const [festivalName, setFestivalName] = useState('');
 
   useEffect(() => {
@@ -92,8 +98,9 @@ function App() {
   };
 
   return (
+    
     <Router>
-      <div className="App">
+      <div className={`App ${isDarkMode?'dark-mode':'light-mode'}`}>
         <Header />
         <Routes>
         <Route path="/" element={<div><Vision /><Offer /><Values /></div>} />
@@ -109,11 +116,11 @@ function App() {
           <Route path="/termsconditions" element={<TermsConditions />} />
           <Route path="/structuredsolutions" element={<div>StructuredSolutions</div>} />
         </Routes>
-        <Footer />
+        <Footer isDarkMode={isDarkMode} toggleTheme={toggleTheme}  />
 
       </div>
     </Router >
-
+    
 
 
   );

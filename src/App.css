@@ -7,6 +7,14 @@ background-image: url("https://transparenttextures.com/patterns/binding-light.pn
     background-size: cover;
 }
 
+.App.light-mode{
+    background-color:#ffffe5;
+    color:#000000;
+}
+.App.dark-mode{
+    background-color: #000000;
+    color: #ffffff;
+}
 
 
 .overlay{
@@ -58,61 +66,7 @@ background-image: url("https://transparenttextures.com/patterns/binding-light.pn
 }
 
 /* VisionSection */
-.vision-section{
-    background-color: transparent;
-    padding-top: 100px;
-}
-.py-5 {
-    padding-top: 5rem !important;}
 
-.vision-text{
-    padding-right: 50px;
-}
-
-.vision-title{
-    font-family: "Arial Rounded MT Bold", sans-serif;
-    font-size: 28px;
-    font-weight: bold;
-    line-height: 1.4;
-}
-
-.highlighted-text{
-    font-family: "Libre Baskerville";
-    border-radius: 50%;
-    background-color: #f4a300;
-    padding:0 8px;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-.vision-subtitle{
-    font-family: Arial,sans-serif;
-    font-size: 18px;
-    color: #333;
-    margin-top: 20px;
-}
-
-.get-started-btn{
-    background-color: #6f42c1;
-    color: #fff;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px 25px;
-    border: none;
-    border-radius: 30px;
-    margin-top: 30px;
-    cursor: pointer;
-}
-
-.get-started-btn:hover{
-    background-color: #5a32a3;
-}
-
-.lottie-anination{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 /* what we offer section */
 .what-we-offer-section{

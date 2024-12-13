@@ -118,11 +118,11 @@ const ContactUs=()=>{
               <div className="contact-content">
                 <div className="contact-info">
                   <h2>Contact Us</h2>
-                  <p><strong>Registered Address:</strong>H-61, Office number- 15, 2nd floor, sector-63,Noida, India, 201301</p>
-                  <p><strong>Corporate Address:</strong>AG- 08 Tower A, Pioneer Urban Square, Sector 62, Gurgaon , 122102</p>
-                  <p><strong>Email:</strong><a href="mailto:info@indus-tech.co.in">info@indus-tech.co.in</a></p>
-                  <p><strong>Phone:</strong><a href="tel:+91 9289479436">+91 9289479436</a></p>
-                  <p><strong>Hours:</strong>{checkOfficeStatus()}</p>
+                  <p style={{color:"#000"}}><strong>Registered Address:</strong>H-61, Office number- 15, 2nd floor, sector-63,Noida, India, 201301</p>
+                  <p style={{color:"#000"}}><strong>Corporate Address:</strong>AG- 08 Tower A, Pioneer Urban Square, Sector 62, Gurgaon , 122102</p>
+                  <p style={{color:"#000"}}><strong>Email:</strong><a href="mailto:info@indus-tech.co.in">info@indus-tech.co.in</a></p>
+                  <p style={{color:"#000"}}><strong>Phone:</strong><a href="tel:+91 9289479436">+91 9289479436</a></p>
+                  <p style={{color:"#000"}}><strong>Hours:</strong>{checkOfficeStatus()}</p>
                 </div>
                 <div className="map-container">
                   <iframe

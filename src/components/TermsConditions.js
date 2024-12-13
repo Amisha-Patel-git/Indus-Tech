@@ -21,16 +21,16 @@ const TermsConditions=()=>{
 .terms-content{
     
     width: 100%;
-    max-width: 600px;
-    max-height: 90vh;
+    
+    
     background-color: #fff;
     border-radius: 10px;
-    padding: 20px;
+    
     overflow-y: auto;
     /* overflow-x: auto; */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     /* position: relative; */
-    margin-top: 50%;
+    
     margin-bottom: 5px;
     /* top: 0;
     left: 0; */
@@ -50,7 +50,7 @@ const TermsConditions=()=>{
     justify-content: center; */
 }
 .terms-content h1{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 18px;
     margin-top:10%;
 }

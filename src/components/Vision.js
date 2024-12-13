@@ -3,6 +3,67 @@ import { Player } from "@lottiefiles/react-lottie-player";
 
 const Vision=()=>{
     return(
+      <>
+      <style>
+        {`
+        .vision-section{
+    background-color: transparent;
+    padding-top: 100px;
+}
+.py-5 {
+    padding-top: 5rem !important;}
+
+.vision-text{
+    padding-right: 50px;
+}
+
+.vision-title{
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.highlighted-text{
+    font-family: "Libre Baskerville";
+    border-radius: 50%;
+    background-color: #f4a300;
+    padding:0 8px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.vision-subtitle{
+    font-family: Arial,sans-serif;
+    font-size: 18px;
+    
+    margin-top: 20px;
+}
+
+.get-started-btn{
+    background-color: #6f42c1;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 30px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+.get-started-btn:hover{
+    background-color: #5a32a3;
+}
+
+.lottie-anination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+        `}
+      </style>
+      
         <section className="vision-section py-5">
           <div className="container d-flex align-items-center">
             <div className="vision-text w-50">
@@ -23,6 +84,7 @@ const Vision=()=>{
             </div>
           </div>
         </section>
+        </>
     );
 };
 

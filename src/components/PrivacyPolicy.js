@@ -11,43 +11,16 @@ const PrivacyPolicy = () => {
     left: 0;
     width: 100%;
     height: 100%;
-    /* background: rgba(0, 0, 0, 0.5); */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* z-index: 1000; */
-    /* overflow: hidden; */
 }
     .privacy-content{
   background: white; 
   width: 100%;
-  /* max-width: 600px; */
   max-height: 90vh;
   background-color: #fff;
-  border-radius: 10px;
-  padding: 20px;
   overflow-y: auto;
-  /* overflow-x: auto; */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  /* position: relative; */
-  margin-top: 20%;
-  margin-bottom: 5px;
-  /* top: 0;
-  left: 0; */
-  /* transform: translate(0,0); */
-  
-  /* height: 100%; */
-  
-  
-/*     
-  border-radius: 10px;
-  
-  text-align: center;
-  
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
 }
 
 .privacy-content h1{
