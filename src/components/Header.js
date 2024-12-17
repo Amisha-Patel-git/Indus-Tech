@@ -117,16 +117,19 @@ const Header=()=>{
                     
                     >About Us</a>
                 </li>
-                <li className="nav-item">
-                  <a className="nav-link" onClick={() => navigate("/contactus")} >Contact Us</a> 
-                                                 
-                </li>
+
                 <li className="nav-item">
                   <a
                     className="nav-link"
                     onClick={() => navigate("/products")}
                   >Products</a>
                 </li>
+
+                <li className="nav-item">
+                  <a className="nav-link" onClick={() => navigate("/contactus")} >Contact Us</a> 
+                                                 
+                </li>
+                
                 <li className="nav-item">
                   <a className="nav-link btn btn-primary text-white" onClick={() => navigate("/signup")}  >Sign Up</a>
                                                                     

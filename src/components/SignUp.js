@@ -1,35 +1,87 @@
-import React from "react";
-import emailjs from "@emailjs/browser";
+import React, { useState } from "react";
+import '@fortawesome/fontawesome-free/css/all.css';
+import RegisterForm from "./RegisterForm";
 
-const SignUp=()=>{
-    const handelQuerySubmit=(e)=>{
-        e.preventDefault();
-        const name=document.getElementById("queryName").value;
-        const email=document.getElementById("queryEmail").value;
-        const phone=document.getElementById("queryPhone").value;
-        const message=document.getElementById("queryMessage").value;
-        emailjs.send(
-          "service_1uqy3uw",
-          "template_tzm0oxn",
-          {name, email, phone, message},
-          "bb5-fCrdgOphgHy-2"
-        )
-        .then(
-          (response)=>{
-            alert("Query sent successfully!");
-            document.getElementById("queryName").value="";
-            document.getElementById("queryEmail").value="";
-            document.getElementById("queryPhone").value="";
-            document.getElementById("queryMessage").value="";
-          },
-          (error)=>{
-            console.error("Emailjs error:", error);
-            alert("Failed to send query. Please try again.");
-          }
-        );
-      };
-    return(
-      <>
+const SignUp = () => {
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+
+  const handlePhoneChange = (e) => {
+    const value = e.target.value;
+
+    if (!/^\d*$/.test(value)) {
+      alert("Please enter numbers only in the phone input!");
+      return;
+    }
+    if (value.length > 10) {
+      alert("Phone number cannot be more than 10 digits!");
+      return;
+    }
+
+    setPhone(value);
+  };
+
+  const validatePassword = (password) => {
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    return passwordRegex.test(password);
+  };
+
+  const handleLogin = () => {
+    console.log("Login handler called");
+  };
+
+  const handleSignUpValidation = (e) => {
+
+    e.preventDefault(); // Stop default form submission
+
+    if (phone.length !== 10) {
+      alert("Phone number must be exactly 10 digits.");
+      return;
+    }
+
+    console.log("Password:", password);
+    console.log("Confirm Password:", confirmPassword);
+
+    if (password !== confirmPassword) {
+      setPasswordError("Passwords do not match!");
+      return;
+    }else{
+      setPasswordError("");
+    }
+
+    if (!validatePassword(password)) {
+      setPasswordError(
+        "Password must be at least 8 characters long, include uppercase, lowercase, a number, and a special character."
+      );
+      return;
+    }
+      
+    
+    
+    setFormSubmitted(true);
+    alert("Form submitted successfully!");
+
+    setName("");
+    setEmail("");
+    setPhone("");
+    setPassword("");
+    setConfirmPassword("");
+    setPasswordError("");
+  };
+
+  const [showRegisterForm, setShowRegisterForm] = useState(false);
+  const openRegisterForm = () => setShowRegisterForm(true);
+  const closeRegisterForm = () => setShowRegisterForm(false);
+
+  return (
+    <>
       <style>
         {`
         .signup{
@@ -120,55 +172,66 @@ const SignUp=()=>{
     margin-top: 20px;
     text-align: center;
 }
+    .register-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1001;  /* Ensure the icon is above other content */
+        }
+            .error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
         `}
       </style>
-        <div className="signup" >
-            <div className="signup-content" onClick={(e) => e.stopPropagation()}>
-              <div className="popup-left">
-                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" alt="Background" />
-              </div>
-              <div className="popup-right">
-                <h2>Register with Us</h2>
-                <form
-                  // onSubmit={(e) => {
-                  //   e.preventDefault();
-                  //   handleLogin();
-                  //   handleSignUpValidation();
-                  //   handelQuerySubmit(e);
-                  // }}
-                  onSubmit={handelQuerySubmit}>
-                  {/* <input type="text" placeholder="Name" required />
-                  <input type="email" placeholder="Email" required />
-                  <input type="tel" placeholder="Phone" required />
-                  <input type="password" id="password" placeholder="Password" required />
-                  <input
-                    type="password"
-                    id="confirmPassword"
-                    placeholder="Confirm Password"
-                    required />
-                  {passwordError && <p className="error">{passwordError}</p>}
-                  <button type="submit" className="btn-submit">Sign Up</button> */}
-                  <input type="text" placeholder="Name" id="queryName" required />
-                  <input type="tel" placeholder="Phone" id="queryPhone" required />
-                  <input
-                    type="email"
-                    placeholder="Your Email"
-                    id="queryEmail"
-                    required
-                  />
-                  <textarea
-                    placeholder="What Solution are you looking for?"
-                    id="queryMessage"
-                    rows="5"
-                    required
-                  ></textarea>
-                  <button type="submit" className="btn-submit">Submit</button>
-                </form>
-              </div>
-            </div>
+      <div className="signup" >
+        <div className="signup-content" onClick={(e) => e.stopPropagation()}>
+          <div className="popup-left">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" alt="Background" />
           </div>
-          </>
-    )
+          <div className="popup-right">
+            <h2>Sign Up</h2>
+            <form
+              onSubmit={handleSignUpValidation}>
+              <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
+              <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+              <input type="tel" placeholder="Phone" value={phone} onChange={handlePhoneChange} required />
+              <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
+              <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required />
+              {passwordError && <p className="error" style={{ color: "red", marginTop: "10px" }}>{passwordError}</p>}
+
+
+              <button type="submit" className="btn-submit">Submit</button>
+            </form>
+          </div>
+        </div>
+
+        <div
+          className="register-icon"
+          onClick={openRegisterForm}
+        >
+          <i className="fas fa-user-plus"></i>
+        </div>
+
+      </div>
+      {showRegisterForm && (
+        <RegisterForm closeForm={closeRegisterForm} />
+      )}
+    </>
+  )
 }
 
 export default SignUp;

@@ -6,12 +6,3 @@ background-image: url("https://transparenttextures.com/patterns/binding-light.pn
     background:url('https://unsplash.com/photos/assorted-type-of-leaves-lying-on-white-panel-VDXtVYJVj7A');
     background-size: cover;
 }
-
-.App.light-mode{
-    background-color:#ffffe5;
-    color:#000000;
-}
-.App.dark-mode{
-    background-color: #000000;
-    color: #ffffff;
-}

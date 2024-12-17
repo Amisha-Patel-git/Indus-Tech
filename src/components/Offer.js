@@ -93,10 +93,10 @@ const Offer = () => {
                 margin-top:10px;
             }
             .arrow-button{
-                background-color:#007bff;
+                background-color:#6f42c1;
                 color:white;
                 border:none;
-                border-radius:50%;
+                border-radius:70%;
                 font-size:20px;
                 padding:10px;
                 cursor:pointer;
@@ -109,7 +109,7 @@ const Offer = () => {
                 left:10px;
             }
             .right-arrow{
-                right:10px;
+                right:25px;
             }
             .arrow-button:disable{
                 background-color:#ccc;
