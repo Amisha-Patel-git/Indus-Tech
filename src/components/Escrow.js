@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const Escrow = () => {
-  const [hoveredCard, setHoveredCard] = useState(null); // Track hovered card index
 
   const escrowContent = [
     {
@@ -24,21 +23,15 @@ const Escrow = () => {
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.heading}>Escrow Solutions</h1>
-      <div style={styles.cardContainer}>
-        {escrowContent.map((card, index) => (
-          <div
-            key={index}
-            style={
-              hoveredCard === index
-                ? { ...styles.card, ...styles.cardHover }
-                : styles.card
-            }
-            onMouseEnter={() => setHoveredCard(index)}
-            onMouseLeave={() => setHoveredCard(null)}
-          >
-            <h2 style={styles.cardTitle}>{card.title}</h2>
-            <p style={styles.cardText}>{card.text}</p>
+      <h1 style={styles.heading}>Escrow</h1>
+      <div style={styles.timelineContainer}>
+        {escrowContent.map((item, index) => (
+          <div key={index} style={styles.timelineItem}>
+            <div style={styles.circle}></div>
+            <div style={styles.content}>
+              <h2 style={styles.title}>{item.title}</h2>
+              <p style={styles.text}>{item.text}</p>
+            </div>
           </div>
         ))}
       </div>
@@ -51,51 +44,54 @@ const styles = {
     fontFamily: "'Roboto', sans-serif",
     backgroundColor: '#f8f9fa',
     padding: '20px',
-    margin: '0',
     minHeight: '100vh',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
+    overflowX: 'hidden',
   },
   heading: {
     fontSize: '32px',
     fontWeight: '700',
     color: '#343a40',
-    marginBottom: '20px',
+    marginBottom: '40px',
     textAlign: 'center',
-    padding: '0 10px',
+    paddingTop: '10%',
   },
-  cardContainer: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', // Responsive grid layout
-    gap: '20px',
+  timelineContainer: {
+    position: 'relative',
+    maxWidth: '800px',
     width: '100%',
-    maxWidth: '1200px',
-    padding: '10px', // Padding for better spacing on smaller screens
   },
-  card: {
-    backgroundColor: '#ffffff',
-    borderRadius: '10px',
-    boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-    padding: '20px',
-    textAlign: 'center',
-    transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+  timelineItem: {
+    display: 'flex',
+    alignItems: 'center',
+    marginBottom: '40px',
+    position: 'relative',
   },
-  cardTitle: {
+  circle: {
+    width: '15px',
+    height: '15px',
+    backgroundColor: '#6f42c1',
+    borderRadius: '50%',
+    marginRight: '20px',
+    flexShrink: 0,
+  },
+  content: {
+    padding: '10px',
+    borderLeft: '2px solid rgb(192 171 238)',
+  },
+  title: {
     fontSize: '18px',
     fontWeight: '600',
-    color: '#007bff',
+    color: '#6f42c1',
     marginBottom: '10px',
   },
-  cardText: {
+  text: {
     fontSize: '14px',
     color: '#495057',
     lineHeight: '1.6',
-  },
-  cardHover: {
-    transform: 'scale(1.05)',
-    boxShadow: '0 6px 10px rgba(0, 0, 0, 0.2)',
   },
 };
 

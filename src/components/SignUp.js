@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '@fortawesome/fontawesome-free/css/all.css';
-import RegisterForm from "./RegisterForm";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
 
@@ -11,6 +11,8 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const navigate = useNavigate();
 
 
   const handlePhoneChange = (e) => {
@@ -261,15 +263,15 @@ const SignUp = () => {
 
         <div
           className="register-icon"
-          onClick={openRegisterForm}
+          onClick={() => navigate("/talktoexperts")}
         >
           <i className="fas fa-user-plus"></i>
         </div>
 
       </div>
-      {showRegisterForm && (
+      {/* {showRegisterForm && (
         <RegisterForm closeForm={closeRegisterForm} />
-      )}
+      )} */}
     </>
   )
 }

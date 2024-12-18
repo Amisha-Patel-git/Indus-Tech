@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import RegisterForm from "./RegisterForm";
 
 
 const Header=()=>{
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsPopupOpen(!isPopupOpen);
+  };
+  
     const navigate = useNavigate();
     return(
       <>
@@ -159,8 +166,12 @@ const Header=()=>{
                 </li>
                 
                 <li className="nav-item">
-                  <a className="nav-link btn btn-primary text-white" onClick={() => navigate("/signup")}  >Sign Up</a>
-                                                                    
+                  <a className="nav-link btn btn-primary text-white" onClick={() => navigate("/signup")}  >Sign Up</a>                                          
+                </li>
+                <li className="nav-item">
+                  {/* <a className="nav-link btn btn-primary text-white" onClick={togglePopup}  >Talk to our Experts</a>
+                  {isPopupOpen && <RegisterForm closeForm={togglePopup} />} */}
+                  <a className="nav-link btn btn-primary text-white" onClick={() => navigate("/talktoexperts")}  >Talk To Experts</a>
                 </li>
               </ul>
             </div>

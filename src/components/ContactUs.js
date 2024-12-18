@@ -1,4 +1,6 @@
 import React from "react";
+import ContactusForm from "./ContactusForm";
+
 
 const ContactUs=()=>{
 
@@ -20,134 +22,119 @@ const ContactUs=()=>{
         <>
         <style>
           {`
-          .contact-container{
-    
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 67vh;
-    margin-top:90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-          .contact{
-    background: #ffffff;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 900px;
-    overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    /* overflow: hidden; */
-    animation: fadeIn 0.3s ease;
-    position: relative;
-}
-.contact-content{
-    display: flex;
-    padding: 20px;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.contact-info{
-    flex: 1;
-    min-width: 300px;
-    /* color: #333; */
-}
-.contact-info h2{
-    margin-bottom: 15px;
-    color: #ff5722;
-    font-size: 24px;
-}
-.conntact-info p{
-    margin: 8px 0;
-    line-height: 1.5;
-    font-size: 16px;
-}
-.contact-info a{
-    color: #ff5722;
-    text-decoration: none;
-}
-.contact-info a:hover{
-    text-decoration: underline;
-}
-.map-container{
-    flex: 1;
-    min-width: 300px;
-    background: #f5f5f5;
-    border-radius: 8px;
-}
-/* .map-container iframe{
-    border: none;
-    border-radius: 8px;
-    width: 100%;
-    height: 100%;
-} */
-.close-button{
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    /* border: none; */
-    /* border-radius: 50%; */
-    /* width: 30px;
-    height: 30px; */
-    font-size: 24px;
-    cursor: pointer;
-    color:#ff5722;
-}
-/* .close-button:hover{
-    background: #d64500;
-} */
-@keyframes fadeIn{
-    from{
-        opacity: 0;
-        transform: scale(0.9);
-    }
-    to{
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-     @media screen and (max-width: 768px) {
+.contact-container {
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          margin-top: 90px;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          z-index: 9999;
+        }
+        .contact {
+          background: #ffffff;
+          border-radius: 10px;
+          width: 80%;
+          max-width: 700px;
+          overflow: hidden;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          animation: fadeIn 0.3s ease;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+        }
+        .contact-content {
+          display: flex;
+          flex-direction: column;
+          flex: 1;
+          gap: 20px;
+          padding: 20px;
+        }
+        .contact-info {
+          flex: 1;
+        }
+        .contact-info h2 {
+          margin-bottom: 15px;
+          color: #ff5722;
+          font-size: 24px;
+        }
+        .contact-info p {
+          margin: 8px 0;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+        .contact-info a {
+          color: #ff5722;
+          text-decoration: none;
+        }
+        .contact-info a:hover {
+          text-decoration: underline;
+        }
+        .map-container {
+          width: 100%;
+          margin-top: 20px;
+          background: #f5f5f5;
+          border-radius: 8px;
+        }
+        .contact-form-container {
+          width: 30%; /* The form will take up 30% of the container width */
+          padding: 20px;
+          background: #f8f9fa;
+          border-radius: 8px;
+          box-shadow:rgba(0, 0, 0, 0.25) 0px 8px 64px 0px; /* Adding shadow around the form */
+          margin-left: 20px;
+          margin-top: 60px; /* Adding margin to move it down from the top */
+        }
+        .close-button {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background: none;
+          font-size: 24px;
+          cursor: pointer;
+          color: #ff5722;
+        }
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
+        }
+        @media screen and (max-width: 768px) {
           .contact-content {
             flex-direction: column;
             align-items: center;
           }
-
           .contact-info {
             min-width: 100%;
             text-align: center;
           }
-
-          .contact-info h2 {
-            font-size: 22px;
-          }
-
-          .contact-info p {
-            font-size: 14px;
-          }
-
           .map-container {
             min-width: 100%;
             margin-top: 20px;
           }
-
           iframe {
             height: 250px;
           }
+          .contact-form-container {
+            width: 100%;
+            margin-top: 20px;
+            margin-left: 0;
+          }
         }
-
         @media screen and (max-width: 480px) {
           .contact-info h2 {
             font-size: 20px;
           }
-
           .contact-info p {
             font-size: 12px;
           }
-
           iframe {
             height: 200px;
           }
@@ -179,6 +166,9 @@ const ContactUs=()=>{
                 </div>
               </div>
             </div>
+            <div className="contact-form-container">
+            <ContactusForm />
+          </div>
             </div>
             </>
     );

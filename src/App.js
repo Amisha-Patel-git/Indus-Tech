@@ -18,6 +18,8 @@ import CollectionSolutions from "./components/CollectionSolutions";
 import PayoutSolutions from "./components/PayoutSolutions";
 import Escrow from "./components/Escrow";
 import ConnectedBanking from "./components/ConnectedBanking";
+import RegisterForm from "./components/RegisterForm";
+import TalkToExperts from "./components/TalkToExperts";
 
 
 function App() {
@@ -95,6 +97,8 @@ function App() {
           <Route path="/payoutsolutions" element={<PayoutSolutions />} />
           <Route path="/escrowaccount" element={<Escrow />} />
           <Route path="/connectedbanking" element={<ConnectedBanking />} />
+          <Route path="/registerform" element={<RegisterForm />} />
+          <Route path="/talktoexperts" element={<TalkToExperts />} />
         </Routes>
         <Footer />
 

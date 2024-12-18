@@ -1,34 +1,46 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Products =()=>{
+
+  const navigate = useNavigate();
     
   const products = [
     {
       title: "Collection Solutions",
       content: "Empower yout business with seamlesscollection solutions tailored to suit your needs.",
       imgSrc: "CollectionSolutions.jpeg",
+      link:"/collectionsolutions",
     },
     {
       title: "Payout Solutions",
       content: "Simlify payments and enhance efficiency with our reliable payout solutions.",
       imgSrc: "PayoutSolutions.jpeg",
+      link:"/payoutsolutions"
     },
     {
       title: "Escrow with Banks",
       content: "Experience secure transactionswith our escrow services in partnership with banks.",
       imgSrc: "escrow.jpg",
+      link:"/escrowaccount"
     },
     {
       title: "Structured Solutions",
       content: "Unlock growth with customized and structured financial solutions for your business",
       imgSrc: "StructuredSolutions.jpeg",
+      link:"/structuredsolutions"
     },
     {
       title: "Connected Banking",
       content: "Integrate banking solutions seamlessly with our advanced connected banking tools.",
-      imgSrc: "ConnectedBanking.jpeg"
+      imgSrc: "ConnectedBanking.jpeg",
+      link:"/connectedbanking"
     }
   ]
+
+  const handleCardClick=(link)=>{
+    navigate(link);
+};
 
     return(
       <>
@@ -158,6 +170,7 @@ const Products =()=>{
                   <div
                     className="product-card"
                     key={index}
+                    onClick={()=>handleCardClick(product.link)}
                   >
                     <img src={product.imgSrc}
                       alt={product.title}
