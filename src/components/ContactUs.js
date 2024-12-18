@@ -110,6 +110,48 @@ const ContactUs=()=>{
         transform: scale(1);
     }
 }
+     @media screen and (max-width: 768px) {
+          .contact-content {
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .contact-info {
+            min-width: 100%;
+            text-align: center;
+          }
+
+          .contact-info h2 {
+            font-size: 22px;
+          }
+
+          .contact-info p {
+            font-size: 14px;
+          }
+
+          .map-container {
+            min-width: 100%;
+            margin-top: 20px;
+          }
+
+          iframe {
+            height: 250px;
+          }
+        }
+
+        @media screen and (max-width: 480px) {
+          .contact-info h2 {
+            font-size: 20px;
+          }
+
+          .contact-info p {
+            font-size: 12px;
+          }
+
+          iframe {
+            height: 200px;
+          }
+        }
           `}
         </style>
         <div className="contact-container">

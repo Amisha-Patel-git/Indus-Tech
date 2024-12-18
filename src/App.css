@@ -6,3 +6,39 @@ background-image: url("https://transparenttextures.com/patterns/binding-light.pn
     background:url('https://unsplash.com/photos/assorted-type-of-leaves-lying-on-white-panel-VDXtVYJVj7A');
     background-size: cover;
 }
+
+@media (max-width: 1024px) {
+    .App {
+      background-color: #f5f5f5; /* Lighter background on tablets */
+    }
+  
+    .App.christmas-theme {
+      background-size: cover;
+      background-position: top;
+    }
+  }
+  
+  /* For small screens (max-width: 768px) */
+  @media (max-width: 768px) {
+    .App {
+      background-color: #fff; /* Lighter background for small devices */
+      background-image: none; /* Hide pattern for smaller screens to reduce clutter */
+    }
+  
+    .App.christmas-theme {
+      background-size: cover;
+      background-position: center; /* Center the background for better visual effect */
+    }
+  }
+  
+  /* For extra small screens (max-width: 480px) */
+  @media (max-width: 480px) {
+    .App {
+      padding: 10px; /* Reduce padding for extra small screens */
+    }
+  
+    .App.christmas-theme {
+      background-size: cover;
+      background-position: center; /* Ensure the background is still focused */
+    }
+  }

@@ -32,6 +32,49 @@ const PrivacyPolicy = () => {
     line-height: 1.5;
     margin-bottom: 20px;
 }
+    .privacy-content p strong {
+          font-weight: bold;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+          .privacy-content {
+            padding: 15px;
+            margin-top: 10%;
+          }
+
+          .privacy-content h1 {
+            font-size: 1.5rem;
+          }
+
+          .privacy-content p {
+            font-size: 0.95rem;
+          }
+
+          .privacy-content ul li p {
+            font-size: 0.95rem;
+          }
+        }
+
+        @media (max-width: 576px) {
+          .privacy-content {
+            margin-top: 5%;
+            padding: 10px;
+          }
+
+          .privacy-content h1 {
+            font-size: 1.2rem;
+          }
+
+          .privacy-content p {
+            font-size: 0.9rem;
+          }
+
+          .privacy-content ul li p {
+            font-size: 0.9rem;
+          }
+        }
+
         `}
       </style>
       {/* <div className="privacy"> */}

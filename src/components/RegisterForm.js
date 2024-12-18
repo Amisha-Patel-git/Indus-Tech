@@ -159,6 +159,41 @@ const RegisterForm=({ closeForm })=>{
             font-size: 18px;
             z-index: 1010;
           }
+            @media (max-width: 768px) {
+                    .signup-content {
+                        width: 90%;
+                        flex-direction: column;
+                    }
+                    .popup-right {
+                        padding: 15px;
+                    }
+                    .popup-right h2 {
+                        font-size: 20px;
+                    }
+                    .popup-right input, .popup-right textarea {
+                        font-size: 14px;
+                    }
+                    .popup-right .btn-submit {
+                        font-size: 14px;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .signup-content {
+                        width: 100%;
+                    }
+                    .popup-right h2 {
+                        font-size: 18px;
+                    }
+                    .popup-right input, .popup-right textarea {
+                        font-size: 12px;
+                        padding: 8px;
+                    }
+                    .popup-right .btn-submit {
+                        font-size: 12px;
+                        padding: 8px;
+                    }
+                }
         `}
       </style>
         <div className="signup-popup" onClick={closeForm}>

@@ -14,6 +14,10 @@ import Offer from "./components/Offer";
 import StructuredSolutions from "./components/StructuredSolutions";
 import Values from "./components/Values";
 import Vision from "./components/Vision";
+import CollectionSolutions from "./components/CollectionSolutions";
+import PayoutSolutions from "./components/PayoutSolutions";
+import Escrow from "./components/Escrow";
+import ConnectedBanking from "./components/ConnectedBanking";
 
 
 function App() {
@@ -87,6 +91,10 @@ function App() {
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/termsconditions" element={<TermsConditions />} />
           <Route path="/structuredsolutions" element={<StructuredSolutions />} />
+          <Route path="/collectionsolutions" element={<CollectionSolutions />} />
+          <Route path="/payoutsolutions" element={<PayoutSolutions />} />
+          <Route path="/escrowaccount" element={<Escrow />} />
+          <Route path="/connectedbanking" element={<ConnectedBanking />} />
         </Routes>
         <Footer />
 

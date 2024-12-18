@@ -108,6 +108,46 @@ const Products =()=>{
     color: #666666;
     line-height: 1.6;
 }
+    @media (max-width: 768px) {
+            .products-page-content {
+              padding: 5%;
+            }
+
+            .products-heading {
+              font-size: 24px;
+            }
+
+            .product-card {
+              max-width: 100%;
+              padding: 15px;
+            }
+
+            .product-image {
+              max-height: 150px;
+            }
+
+            .product-title {
+              font-size: 18px;
+            }
+
+            .product-content {
+              font-size: 14px;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .products-heading {
+              font-size: 20px;
+            }
+
+            .product-title {
+              font-size: 16px;
+            }
+
+            .product-content {
+              font-size: 12px;
+            }
+          }
         `}
       </style>
         <div className="products-page">

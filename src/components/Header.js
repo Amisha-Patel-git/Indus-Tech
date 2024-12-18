@@ -96,6 +96,34 @@ const Header=()=>{
 .dropdown-item:hover{
     background: #f3f3f3;
 }
+     @media (max-width: 991px) {
+          .navbar {
+            padding: 10px 15px;
+          }
+          .navbar-toggler {
+            border-color: #6c63ff;
+          }
+        }
+
+        @media (max-width: 576px) {
+          .navbar-brand {
+            font-size: 1.2rem;
+          }
+
+          .navbar-nav {
+            margin-top: 10px;
+          }
+
+          .nav-link {
+            font-size: 1.1rem;
+            margin: 5px 0;
+          }
+
+          .nav-link.btn-primary {
+            width: 100%;
+            margin-top: 10px;
+          }
+        }
         `}
       </style>
         <nav className="navbar navbar-expand-lg navbar-light fixed-top">

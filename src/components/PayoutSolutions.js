@@ -1,30 +1,40 @@
 import React, { useState } from 'react';
 
-const StructuredSolutions = () => {
+const PayoutSolutions = () => {
   const [hoveredCard, setHoveredCard] = useState(null); // Track hovered card index
+
+  const payoutContent = [
+    {
+      title: "Disbursement Options",
+      text: "Supports various payout methods, including bank transfers, digital wallets, and checks.",
+    },
+    {
+      title: "Automated Payments",
+      text: "Allows for automated and scheduled payments, reducing manual effort and minimizing errors.",
+    },
+    {
+      title: "Real-Time Transactions",
+      text: "Enables real-time or near-instant payouts, improving cash flow and recipient satisfaction.",
+    },
+    {
+      title: "Security and Compliance",
+      text: "Incorporates security measures such as encryption and fraud detection, and complies with regulations to protect sensitive financial information.",
+    },
+    {
+      title: "Customizable Workflows",
+      text: "Provides businesses with the ability to customize payment workflows based on their specific needs and requirements.",
+    },
+    {
+      title: "Tracking and Reporting",
+      text: "Offers tools for tracking payment statuses, generating reports, and managing transaction history for better financial oversight.",
+    },
+  ];
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.heading}>Structured Solutions</h1>
+      <h1 style={styles.heading}>Payout Solutions</h1>
       <div style={styles.cardContainer}>
-        {[ // List of cards content
-          {
-            title: "Consolidated Payment Processing",
-            text: "The bank aggregates different payment methods, simplifying the payment process for merchants by providing a single point of access.",
-          },
-          {
-            title: "Merchant Services",
-            text: "Banks typically offer additional services such as fraud protection, chargeback management, and transaction reporting.",
-          },
-          {
-            title: "Integration",
-            text: "Payment aggregators provide APIs and tools that enable businesses to integrate payment processing into their websites or applications easily.",
-          },
-          {
-            title: "Compliance and Security",
-            text: "Banks usually adhere to strict regulatory standards and security protocols, ensuring that transactions are secure and compliant with regulations such as PCI DSS.",
-          },
-        ].map((card, index) => (
+        {payoutContent.map((card, index) => (
           <div
             key={index}
             style={
@@ -57,17 +67,20 @@ const styles = {
     justifyContent: 'center',
   },
   heading: {
-    fontSize: '36px',
+    fontSize: '32px',
     fontWeight: '700',
     color: '#343a40',
     marginBottom: '20px',
+    textAlign: 'center',
+    padding: '0 10px',
   },
   cardContainer: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', // Responsive grid layout
     gap: '20px',
     width: '100%',
     maxWidth: '1200px',
+    padding: '10px', // Padding for better spacing on smaller screens
   },
   card: {
     backgroundColor: '#ffffff',
@@ -78,15 +91,15 @@ const styles = {
     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
   },
   cardTitle: {
-    fontSize: '20px',
+    fontSize: '18px',
     fontWeight: '600',
     color: '#007bff',
     marginBottom: '10px',
   },
   cardText: {
-    fontSize: '16px',
+    fontSize: '14px',
     color: '#495057',
-    lineHeight: '1.5',
+    lineHeight: '1.6',
   },
   cardHover: {
     transform: 'scale(1.05)',
@@ -94,4 +107,4 @@ const styles = {
   },
 };
 
-export default StructuredSolutions;
+export default PayoutSolutions;

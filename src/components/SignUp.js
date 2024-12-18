@@ -189,6 +189,46 @@ const SignUp = () => {
   font-size: 14px;
   margin-top: 5px;
 }
+  @media (max-width: 768px) {
+          .signup-content {
+            flex-direction: column;
+            width: 90%;
+            max-width: 100%;
+          }
+
+          .popup-left {
+            display: none;
+          }
+
+          .popup-right {
+            padding: 15px;
+          }
+
+          .register-icon {
+            bottom: 10px;
+            right: 10px;
+            font-size: 24px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .popup-right h2 {
+            font-size: 20px;
+          }
+
+          .popup-right input, .popup-right textarea {
+            font-size: 14px;
+          }
+
+          .popup-right .btn-submit {
+            font-size: 14px;
+            padding: 8px;
+          }
+
+          .register-icon {
+            padding: 8px;
+          }
+        }
         `}
       </style>
       <div className="signup" >

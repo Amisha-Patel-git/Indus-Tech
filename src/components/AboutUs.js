@@ -118,6 +118,45 @@ const AboutUs=()=>{
         transform: scale(1);
     }
 }
+    @media screen and (max-width: 768px) {
+            .about-heading {
+                font-size: 28px;
+            }
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .about-image {
+                width: 150px;
+                height: 150px;
+            }
+            .rmc-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .rmc-box {
+                width: 80%;
+                margin-bottom: 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .about-heading {
+                font-size: 24px;
+            }
+            .about-section h3 {
+                font-size: 18px;
+            }
+            .content p {
+                font-size: 14px;
+            }
+            .rmc-box h3 {
+                font-size: 30px;
+            }
+            .rmc-box p {
+                font-size: 12px;
+            }
+        }
         `}
       </style>
         <div className="about-us">

@@ -61,6 +61,46 @@ const Vision=()=>{
     justify-content: center;
     align-items: center;
 }
+    @media (max-width: 767px) {
+            .vision-text {
+              padding-right: 0;
+              text-align: center;
+              margin-bottom: 20px;
+            }
+
+            .vision-title {
+              font-size: 22px;
+            }
+
+            .highlighted-text {
+              font-size: 24px;
+            }
+
+            .vision-subtitle {
+              font-size: 16px;
+            }
+
+            .get-started-btn {
+              font-size: 16px;
+              padding: 8px 20px;
+            }
+
+            .lottie-animation {
+              width: 100%;
+              justify-content: center;
+              align-items: center;
+            }
+
+            .lottie-animation .player {
+              width: 250px;
+              height: 250px;
+            }
+
+            .container {
+              flex-direction: column;
+              align-items: center;
+            }
+          }
         `}
       </style>
       

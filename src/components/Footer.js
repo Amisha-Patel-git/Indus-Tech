@@ -29,12 +29,14 @@ const Footer = ({ isDarkMode, toggleTheme }) => {
     align-items: center;
     text-align: center;
     margin-top: 80px;
+    flex-wrap: wrap;
 }
 
 .footer-left,
 .footer-middle,
 .footer-right{
-    flex: 1
+    flex: 1;
+    margin: 5px;
 }   
 
 .footer-left p{
@@ -73,6 +75,30 @@ const Footer = ({ isDarkMode, toggleTheme }) => {
 .footer-right a:hover{
     text-decoration: underline;
 }
+    @media (max-width: 768px) {
+          .footer-container {
+            flex-direction: column;
+            text-align: center;
+            margin-top: 20px;
+          }
+
+          .footer-left,
+          .footer-middle,
+          .footer-right {
+            flex: none;
+            width: 100%;
+          }
+
+          .footer-middle {
+            flex-direction: column;
+            gap: 10px;
+          }
+
+          .footer-right {
+            justify-content: center;
+            margin-top: 10px;
+          }
+        }
         `}
       </style>
       <section className="footer-section">

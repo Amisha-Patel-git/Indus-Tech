@@ -59,6 +59,43 @@ const TermsConditions=()=>{
     line-height: 1.5;
     margin-bottom: 20px;
 }
+     @media (max-width: 768px) {
+          .terms-content {
+            padding: 15px;
+          }
+
+          .terms-content h1 {
+            font-size: 20px;
+          }
+
+          .terms-content p,
+          .terms-content li {
+            font-size: 14px;
+          }
+
+          .terms-content h3 {
+            font-size: 18px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .terms-content {
+            padding: 10px;
+          }
+
+          .terms-content h1 {
+            font-size: 18px;
+          }
+
+          .terms-content p,
+          .terms-content li {
+            font-size: 12px;
+          }
+
+          .terms-content h3 {
+            font-size: 16px;
+          }
+        }
         `}
       </style>
         <div className="terms">
