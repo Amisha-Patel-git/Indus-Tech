@@ -78,7 +78,7 @@ const Products =()=>{
 .products-heading{
     font-size: 28px;
     font-weight: bold;
-    color: #ff5722;
+    color: #6f42c1;
     margin-top: 10px;
     margin-bottom: 20px;
 }

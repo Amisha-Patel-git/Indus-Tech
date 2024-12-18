@@ -57,7 +57,7 @@ const ContactUs=()=>{
         }
         .contact-info h2 {
           margin-bottom: 15px;
-          color: #ff5722;
+          color: #6f42c1;
           font-size: 24px;
         }
         .contact-info p {

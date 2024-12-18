@@ -37,7 +37,7 @@ const AboutUs=()=>{
 .about-heading{
     text-align: center;
     font-size: 32px;
-    color: #ff5722;
+    color: #6f42c1;
     margin-bottom: 20px;
 }
 .close-btn{
