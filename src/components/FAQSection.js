@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const FAQSection = () => {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -46,7 +47,13 @@ const FAQSection = () => {
       },
       {
         question: 'How can enterprise start their escrow journey?',
-        answer: 'You can click here and fill the with your details so that our escrow expert can contact you.',
+        answer: (
+            <>
+            You can 
+            <Link to="/talktoexperts" style={{ color: '#007bff', fontWeight: 'bold', textDecoration: 'none', margin: '0 5px' }}>click here</Link> 
+             and fill the with your details so that our escrow expert can contact you.
+            </>
+        ),
       },
       {
         question: 'How can I open an escrow account?',
