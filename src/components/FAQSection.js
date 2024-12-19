@@ -14,7 +14,16 @@ const FAQSection = () => {
     },
     {
         question: 'What type of solutions are offered by Castler in escrow banking?',
-        answer: '',
+        answer: (
+            <>
+            Following are the solutions offered by Castler:
+            <ol>
+                <li>Castler offers Enterprise Escrow where you can integrate your Escrow with India's top banks using our robust platform.</li>
+                <li>Castler offers Connected Banking Suite where you can manage all your current & Escrow account on a single platform.</li>
+                <li>Castler offers Exclusive Label & On-Prem Solutions where you can customize India’s largest Escrow banking platform your way.</li>
+            </ol>
+            </>
+        ),
       },
       {
         question: 'How can I ensure payment safety using Castler’s solution?',
@@ -22,7 +31,18 @@ const FAQSection = () => {
       },
       {
         question: 'Which banks are available to open an escrow?',
-        answer: '',
+        answer: (
+            <>
+            Below are the banking partners available for opening an escrow account:
+            <ol>
+                <li>RBL Bank</li>
+                <li>IDFC Bank</li>
+                <li>DBS Bank</li>
+                <li>YES Bank</li>
+                <li>ICICI Bank</li>
+            </ol>
+            </>
+        ),
       },
       {
         question: 'How can enterprise start their escrow journey?',
