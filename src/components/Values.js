@@ -19,9 +19,9 @@ const Values=()=>{
 }
 
 .merchant-image{
-    /* width: 300px;
-    height: 300px;
-    object-fit: cover; */
+    // width: 200%;
+    // height: 300px;
+    // object-fit: cover; 
     /* border: 5px solid #f5e1a4;
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */

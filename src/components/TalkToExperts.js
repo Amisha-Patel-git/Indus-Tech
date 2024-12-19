@@ -163,7 +163,7 @@ const TalkToExperts = () => {
       </div>
       <div style={styles.formContainer}>
         <form style={styles.form} onSubmit={handelQuerySubmit}>
-          <h2 style={styles.formTitle}>Contact Us</h2>
+          <h2 style={styles.formTitle}></h2>
           <input
             type="text"
             placeholder="Your Name"

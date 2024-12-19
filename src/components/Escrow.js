@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import FAQSection from './FAQSection';
 
 const Escrow = () => {
 
@@ -22,6 +23,7 @@ const Escrow = () => {
   ];
 
   return (
+    <>
     <div style={styles.container}>
       <h1 style={styles.heading}>Escrow</h1>
       <div style={styles.timelineContainer}>
@@ -36,6 +38,8 @@ const Escrow = () => {
         ))}
       </div>
     </div>
+    <FAQSection />
+    </>
   );
 };
 
