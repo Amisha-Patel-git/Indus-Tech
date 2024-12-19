@@ -105,7 +105,7 @@ const Footer = ({ isDarkMode, toggleTheme }) => {
         {/* <div className="footer-divider"></div> */}
         <div className="footer-container">
           <div className="footer-left">
-            <p>©Info-Tech. All Rights Reserved.</p>
+            <p>©Indus-Tech RMC. All Rights Reserved.</p>
           </div>
 
           <div className="footer-middle">
