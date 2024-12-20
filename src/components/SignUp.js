@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import '@fortawesome/fontawesome-free/css/all.css';
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const SignUp = () => {
 
@@ -15,7 +16,7 @@ const SignUp = () => {
   const navigate = useNavigate();
 
 
-  const handlePhoneChange = (e) => {
+  const handlePhoneChange = async (e) => {
     const value = e.target.value;
 
     if (!/^\d*$/.test(value)) {
@@ -39,7 +40,7 @@ const SignUp = () => {
     console.log("Login handler called");
   };
 
-  const handleSignUpValidation = (e) => {
+  const handleSignUpValidation = async (e) => {
 
     e.preventDefault(); // Stop default form submission
 
@@ -54,7 +55,7 @@ const SignUp = () => {
     if (password !== confirmPassword) {
       setPasswordError("Passwords do not match!");
       return;
-    }else{
+    } else {
       setPasswordError("");
     }
 
@@ -64,28 +65,60 @@ const SignUp = () => {
       );
       return;
     }
-      
-    
-    
-    setFormSubmitted(true);
-    alert("Form submitted successfully!");
 
-    setName("");
-    setEmail("");
-    setPhone("");
-    setPassword("");
-    setConfirmPassword("");
-    setPasswordError("");
-  };
+    const user = {
+      yourname: name,
+      phone: phone,
+      email: email,
+      password: password
+    };
 
-  const [showRegisterForm, setShowRegisterForm] = useState(false);
-  const openRegisterForm = () => setShowRegisterForm(true);
-  const closeRegisterForm = () => setShowRegisterForm(false);
+    try{
+      const response = await axios.post("http://localhost:3005/upload", user,{
+        headers: {
+          "Content-Type": "application/json",
+      },
+      });
 
-  return (
-    <>
-      <style>
-        {`
+      if (response && response.data) {
+        alert("Signup successful! Please check your email for further proceedings.");
+        
+        // Clear form fields
+        setName("");
+        setEmail("");
+        setPhone("");
+        setPassword("");
+        setConfirmPassword("");
+        setPasswordError("");
+
+      } else {
+        alert("Signup failed. Please try again.");
+      }
+    }catch(error){
+      console.error("Error during signup:", error.response || error.message);
+      alert("Error during signup. Please try again later.");
+    }
+
+
+  setFormSubmitted(true);
+  // alert("Form submitted successfully!");
+
+  setName("");
+  setEmail("");
+  setPhone("");
+  setPassword("");
+  setConfirmPassword("");
+  setPasswordError("");
+};
+
+const [showRegisterForm, setShowRegisterForm] = useState(false);
+const openRegisterForm = () => setShowRegisterForm(true);
+const closeRegisterForm = () => setShowRegisterForm(false);
+
+return (
+  <>
+    <style>
+      {`
         .signup{
     
     top: 0;
@@ -232,48 +265,50 @@ const SignUp = () => {
           }
         }
         `}
-      </style>
-      <div className="signup" >
-        <div className="signup-content" onClick={(e) => e.stopPropagation()}>
-          <div className="popup-left">
-            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" alt="Background" />
-          </div>
-          <div className="popup-right">
-            <h2>Sign Up</h2>
-            <form
-              onSubmit={handleSignUpValidation}>
-              <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
-              <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-              <input type="tel" placeholder="Phone" value={phone} onChange={handlePhoneChange} required />
-              <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
-              <input
-                type="password"
-                id="confirmPassword"
-                placeholder="Confirm Password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required />
-              {passwordError && <p className="error" style={{ color: "red", marginTop: "10px" }}>{passwordError}</p>}
-
-
-              <button type="submit" className="btn-submit">Submit</button>
-            </form>
-          </div>
+    </style>
+    <div className="signup" >
+      <div className="signup-content" onClick={(e) => e.stopPropagation()}>
+        <div className="popup-left">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" alt="Background" />
         </div>
+        <div className="popup-right">
+          <h2>Sign Up</h2>
+          <form
+            onSubmit={handleSignUpValidation}>
+            <input type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)} required />
+            <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <input type="tel" placeholder="Phone" value={phone} onChange={handlePhoneChange} required />
+            <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required />
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Confirm Password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required />
+            {passwordError && <p className="error" style={{ color: "red", marginTop: "10px" }}>{passwordError}</p>}
 
-        <div
-          className="register-icon"
-          onClick={() => navigate("/talktoexperts")}
-        >
-          <i className="fas fa-user-plus"></i>
+
+            <button type="submit" className="btn-submit">Submit</button>
+          </form>
         </div>
-
       </div>
-      {/* {showRegisterForm && (
+
+      <div
+        className="register-icon"
+        onClick={() => navigate("/talktoexperts")}
+      >
+        <i className="fas fa-user-plus"></i>
+      </div>
+
+    </div>
+    {/* {showRegisterForm && (
         <RegisterForm closeForm={closeRegisterForm} />
       )} */}
-    </>
-  )
-}
+  </>
+)
+
+};
+
 
 export default SignUp;

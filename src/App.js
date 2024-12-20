@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link, Form } from "react-router-dom";
 import Header from "./components/Header";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
@@ -99,6 +99,7 @@ function App() {
           <Route path="/connectedbanking" element={<ConnectedBanking />} />
           <Route path="/registerform" element={<RegisterForm />} />
           <Route path="/talktoexperts" element={<TalkToExperts />} />
+          <Route path="/form" element={<Form />} />
         </Routes>
         <Footer />
 

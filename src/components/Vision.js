@@ -1,7 +1,11 @@
 import React from "react";
 import { Player } from "@lottiefiles/react-lottie-player";
+import { useNavigate } from "react-router-dom";
 
 const Vision=()=>{
+
+  const navigate = useNavigate();
+
     return(
       <>
       <style>
@@ -111,7 +115,7 @@ const Vision=()=>{
               <p className="vision-subtitle">
                 Fueling Business Expansion with our Cutting-Edge Payment Solutions
               </p>
-              <button className="btn get-started-btn">Get Started Today</button>
+              <button className="btn get-started-btn" onClick={() => navigate("/signup")}>Get Started Today</button>
             </div>
 
             <div className="lottie-animation w-50">
