@@ -74,7 +74,7 @@ const SignUp = () => {
     };
 
     try{
-      const response = await axios.post("http://localhost:3005/upload", user,{
+      const response = await axios.post("https://indus-tech.co.in/api/v1/upload", user,{
         headers: {
           "Content-Type": "application/json",
       },
