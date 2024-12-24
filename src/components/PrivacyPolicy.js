@@ -6,8 +6,9 @@ const PrivacyPolicy = () => {
       <style>
         {`
         .privacy
-    
-    margin-top: 15%;
+    {
+    margin-top: 5.5%;
+    padding: 15px;
     left: 0;
     width: 100%;
     height: 100%;
@@ -16,11 +17,10 @@ const PrivacyPolicy = () => {
     align-items: center;
 }
     .privacy-content{
-  background: white; 
+  
   width: 100%;
-  max-height: 90vh;
-  background-color: #fff;
-  overflow-y: auto;
+  // max-height: 90vh;
+  // overflow-y: auto;
 }
 
 .privacy-content h1{
@@ -77,7 +77,7 @@ const PrivacyPolicy = () => {
 
         `}
       </style>
-      {/* <div className="privacy"> */}
+      <div className="privacy">
         <div className="privacy-content">
           <h1>Privacy Policy</h1>
           <p>
@@ -197,7 +197,7 @@ const PrivacyPolicy = () => {
             In case of any other complaints regarding the company's products or services, kindly send an email to info@indus-tech.co.in.
           </p>
         </div>
-      {/* </div> */}
+      </div>
     </>
   );
 };
