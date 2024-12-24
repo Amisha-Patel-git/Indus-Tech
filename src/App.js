@@ -25,6 +25,7 @@ import TalkToExperts from "./components/TalkToExperts";
 function App() {
 
   const [festivalName, setFestivalName] = useState('');
+  const [backgroundImage, setBackgroundImage] = useState('https://cdn.svgator.com/images/2022/12/snow-globe-city-animation.svg');
 
   useEffect(() => {
     const fetchHolidayData = async () => {
@@ -77,11 +78,26 @@ function App() {
   }, []);
 
 
-
+  const backgroundStyle = {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    objectFit: 'cover', // Ensures the video covers the whole container
+    zIndex: -1, // Keeps the video in the background
+  };
   return (
     
     <Router>
-      <div className="App">
+      <div className="App" style={backgroundStyle}>
+      <video 
+        src="https://static.videezy.com/system/resources/previews/000/004/913/original/Christmas_Santa_Sleigh_Motion_Background_4K.mp4" 
+        autoPlay
+        muted
+        loop
+        style={backgroundStyle}
+      />
         <Header />
         <Routes>
         <Route path="/" element={<div><Vision /><Offer /><Values /></div>} />

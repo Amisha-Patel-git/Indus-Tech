@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext , useState,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 
 const Footer = ({ isDarkMode, toggleTheme }) => {
@@ -6,6 +6,28 @@ const Footer = ({ isDarkMode, toggleTheme }) => {
 
 
   const navigate = useNavigate();
+  const [flip, setFlip] = useState(false); // State to handle flipping
+  const [santaPosition, setSantaPosition] = useState(0); // Santa's current position
+
+  useEffect(() => {
+    const santaSpeed = 3; // Speed of movement per frame
+
+    // Function to move Santa
+    const moveSanta = () => {
+      setSantaPosition((prevPosition) => {
+        const nextPosition = prevPosition + (flip ? -santaSpeed : santaSpeed);
+        if (nextPosition <= 0 || nextPosition >= window.innerWidth - 50) {
+          setFlip((prev) => !prev); // Flip on edge collision
+        }
+        return nextPosition;
+      });
+    };
+
+    // Start moving Santa
+    const interval = setInterval(moveSanta, 16); // 60 frames per second (1000ms / 60 = ~16ms per frame)
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, [flip]);
   return (
     <>
       <style>
@@ -99,14 +121,51 @@ const Footer = ({ isDarkMode, toggleTheme }) => {
             margin-top: 10px;
           }
         }
+.santa-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: #87CEEB; /* Background color like sky */
+            overflow: hidden;
+          }
+
+          .santa {
+            width: 37px; /* Original width of each frame */
+            height: 72px; /* Original height of each frame */
+            background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/santa-running.png'); /* Replace with your spritesheet URL */
+            background-repeat: no-repeat;
+            position: absolute;
+            bottom: 20px; /* Position Santa at the bottom */
+            left: 0; /* Start at the left side */
+            animation: walk 1s steps(8) infinite; /* Apply the walking animation */
+            transform: scale(2); /* Scale up Santa */
+            transform-origin: bottom left; /* Keep the scaling anchored to the bottom-left corner */
+          }
+
+          /* Animation for walking */
+          @keyframes walk {
+            100% {
+              background-position-x: -296px; /* Adjust this value to match the spritesheet width */
+            }
+          }
+
+          /* Flip the sprite */
+          .flipped {
+            transform: scaleX(-1) scale(2); /* Flip and scale the sprite */
+          }
         `}
       </style>
       <section className="footer-section">
+      <div
+          className={`santa ${flip ? 'flipped' : ''}`}
+          style={{ left: `${santaPosition}px` }}
+        ></div>
         {/* <div className="footer-divider"></div> */}
         <div className="footer-container">
           <div className="footer-left">
             <p>©Indus-Tech RMC. All Rights Reserved.</p>
           </div>
+          
 
           <div className="footer-middle">
             <p className="clickable" onClick={() => navigate("/privacypolicy")}>Privacy Policy</p>
