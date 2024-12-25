@@ -26,10 +26,71 @@ import MoonLogin from "./components/MoonLogin";
 
 function App() {
 
+  const [festivalName, setFestivalName] = useState('');
+
+  useEffect(() => {
+    const fetchHolidayData = async () => {
+      const currentDate = new Date();
+      const API_KEY = 'fLOr5mnWeuvk6fgAF40141oAOuO1raqt';
+      const COUNTRY_CODE = 'IN';
+      const year = currentDate.getFullYear();
+
+      try {
+        const response = await fetch(`https://calendarific.com/api/v2/holidays?api_key=${API_KEY}&country=${COUNTRY_CODE}&year=${year}`);
+        if (!response.ok) {
+          throw new Error(`API error:${response.statusText}`);
+        }
+
+        const data = await response.json();
+        let appliedTheme = '';
+
+        data.response.holidays.forEach((holiday) => {
+          const holidayDate = new Date(holiday.date.iso);
+          const daysBeforeFestival = 3;
+          const festivalStartDate = new Date(holidayDate.setDate(holidayDate.getDate() - daysBeforeFestival));
+          const festivalEndDate = new Date(holidayDate.setDate(holidayDate.getDate() + daysBeforeFestival + 1));
+
+          if (currentDate >= festivalStartDate && currentDate <= festivalEndDate) {
+            appliedTheme = holiday.name.toLowerCase().replace(/\+/g, '-');
+            setFestivalName(holiday.name);
+          }
+        });
+        if (appliedTheme) {
+          document.body.className = appliedTheme;
+          localStorage.setItem('lastTheme', appliedTheme);
+        } else {
+          document.body.className = '';
+          localStorage.removeItem('lastTheme');
+          setFestivalName('');
+        }
+
+      } catch (error) {
+        console.error('Error fetching holiday data:', error);
+        const cachedTheme = localStorage.getItem('lastTheme');
+        if (cachedTheme) {
+          document.body.className = cachedTheme;
+          setFestivalName(cachedTheme.replace('-', ' '));
+        } else {
+          document.body.className = '';
+        }
+      }
+    };
+    fetchHolidayData();
+  }, []);
+
+
+
   return (
     
     <Router>
-      <div className="App">
+      <div className="App" style={backgroundStyle}>
+      <video 
+        src="https://static.videezy.com/system/resources/previews/000/004/913/original/Christmas_Santa_Sleigh_Motion_Background_4K.mp4" 
+        autoPlay
+        muted
+        loop
+        style={backgroundStyle}
+      />
         <Header />
         <Routes>
         <Route path="/" element={<div><Vision /><Offer /><Values /></div>} />
