@@ -6,24 +6,26 @@ const TermsConditions=()=>{
       <style>
         {`
         .terms
-    
+    {
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-     background: rgba(0, 0, 0, 0.5); 
+    //  background: rgba(0, 0, 0, 0.5); 
     display: flex;
     justify-content: center;
     align-items: center;
     /* z-index: 1000; */
     /* overflow: hidden; */
+    padding:15px;
+    margin-top:30px;
 }
 .terms-content{
     
     width: 100%;
     
     
-    background-color: #fff;
+    // background-color: #fff;
     border-radius: 10px;
     
     overflow-y: auto;
@@ -51,8 +53,8 @@ const TermsConditions=()=>{
 }
 .terms-content h1{
     margin-bottom: 10px;
-    font-size: 18px;
-    margin-top:10%;
+    // font-size: 18px;
+    margin-top:5.5%;
 }
 .terms-content p{
     font-size: 14px;
@@ -110,9 +112,9 @@ const TermsConditions=()=>{
               <p>
                 The term 'IndusTech RMC PRIVATE LIMITED' or 'us' or 'we'refers to the owner of the website whose registered/operational office is AG- 08 Tower A, Pioneer Urban Square, Sector 62, Gurgaon , 122102, +91 9289479436 . The term 'you' refers to the user or viewer of our website.
               </p>
-              <h3>
+              <h4>
                 The use of this website is subject to the following terms of use:
-              </h3>
+              </h4>
               <ul>
                 
                   <li>
@@ -284,8 +286,8 @@ const TermsConditions=()=>{
                     <li>
                     In the event a Data Subject wishes to exercise its data subject rights under applicable Data Protection Law, including, but not limited to, a data subject's right of access, correction and/or erasure of its Personal Data in IndusTech RMC Private Limited's control, the Data Subjects can submit such request done by contacting IndusTech RMC Private Limited's Data Protection Officer (DPO) below. Also for raising concerns and/or any complaints related to the Customer Personal Data that can be done by contacting the Data Protection Officer below:
                     <ul>
-                      <li>Name: Tarun Suresh Nazare</li>
-                      <li>Email ID: tarun@neokred.tech</li>
+                      <li>Name: Gokul Sisodiya</li>
+                      <li>Email ID: gokul.sisodiya@indus-tech.co.in</li>
                     </ul>
                     </li>
                     <li>There are no Temporary files getting generated during processing.</li>
@@ -305,7 +307,7 @@ const TermsConditions=()=>{
               <h4>Data Importer</h4>
               <p>Name - IndusTech RMC Private Limited</p>
               <p>Address - AG- 08 Tower A, Pioneer Urban Square, Sector 62, Gurgaon , 122102</p>
-              <p>Role (controller/processor) : Tarun Suresh Nazare, Director, Co-Founder & CEO tarun@neokred.tech</p>
+              <p>Role (controller/processor) : Gokul Sisodiya, Director gokul.sisodiya@indus-tech.co.in</p>
               <p>Signature and date : Provision of the Services to the Customer in accordance with the Agreement.</p>
               <p>Activities relevant to the data transferred under these Clauses - Signature and date are set out in the Agreement.</p>
               <p>Contact person's name, position and contact details : Processor</p>

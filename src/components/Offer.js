@@ -50,10 +50,9 @@ const Offer = () => {
         <style>{`
             .offers-container{
                 display:flex;
-                align-items:center;
                 justify-content:center;
-                width:100vw;
-                height:300px;   
+                flex-wrap: wrap;
+                padding: 20px;
             }
             .card{
                 flex: 0 0 18%; /* Each card takes 18% of the container width */
@@ -68,6 +67,7 @@ const Offer = () => {
           justify-content: center;
           align-items: center;
           transition: transform 0.3s ease-in-out;
+        
             }
             .card:hover{
                 transform:scale(1.05);
@@ -76,16 +76,24 @@ const Offer = () => {
                 font-size:18px;
                 margin-top:10px;
             }
+            
+             @media screen and (max-width: 1024px) {
+          .card {
+            flex: 0 1 calc(30% - 20px); /* Adjust width for tablets */
+          }
+        }
           
             @media screen and (max-width:768px){
-                .offers-container{
-                    flex-direction:column;
-                    align-items:center;
-                }
-                .card{
-                    width:80%;
-                    margin-bottom:20px;
-                }
+                .card {
+            flex: 0 1 calc(45% - 20px); /* Adjust width for small devices */
+          }
+               
+          }
+          @media screen and (max-width: 480px) {
+          .card {
+            flex: 0 1 100%; /* Full width for extra small screens */
+          }
+            
             }
         `}</style>
         <div className="offers-container">

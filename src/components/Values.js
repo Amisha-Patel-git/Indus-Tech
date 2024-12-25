@@ -19,18 +19,23 @@ const Values=()=>{
 }
 
 .merchant-image{
-    // width: 200%;
-    // height: 300px;
-    // object-fit: cover; 
-    /* border: 5px solid #f5e1a4;
-    border-radius: 50%;
+   
+   
+    object-fit: cover; 
+    
+    
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+
+    max-width: 100%; /* Ensure the image doesn't overflow */
+  height: auto; /* Maintain aspect ratio */
+  
+  
 }
 
-@media(max-width:767px){
+@media(max-width:768px){
     .merchant-image{
-        width: 250px;
-        height: 250px;
+        width: 200px;
+        height: 200px;
     }
 }
 
