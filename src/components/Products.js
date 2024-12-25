@@ -20,7 +20,7 @@ const Products =()=>{
     },
     {
       title: "Escrow with Banks",
-      content: "Experience secure transactionswith our escrow services in partnership with banks.",
+      content: "Experience secure transactions with our escrow services in partnership with banks.",
       imgSrc: "escrow.jpg",
       link:"/escrowaccount"
     },
