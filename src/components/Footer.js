@@ -10,7 +10,7 @@ const Footer = ({ isDarkMode, toggleTheme }) => {
   const [santaPosition, setSantaPosition] = useState(0); // Santa's current position
 
   useEffect(() => {
-    const santaSpeed = 3; // Speed of movement per frame
+    const santaSpeed = 2; // Speed of movement per frame
 
     // Function to move Santa
     const moveSanta = () => {
@@ -135,10 +135,10 @@ const Footer = ({ isDarkMode, toggleTheme }) => {
             background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/74196/santa-running.png'); /* Replace with your spritesheet URL */
             background-repeat: no-repeat;
             position: absolute;
-            bottom: 20px; /* Position Santa at the bottom */
+            bottom: 70px; /* Position Santa at the bottom */
             left: 0; /* Start at the left side */
             animation: walk 1s steps(8) infinite; /* Apply the walking animation */
-            transform: scale(2); /* Scale up Santa */
+            transform: scale(1.3); /* Scale up Santa */
             transform-origin: bottom left; /* Keep the scaling anchored to the bottom-left corner */
           }
 
@@ -151,7 +151,7 @@ const Footer = ({ isDarkMode, toggleTheme }) => {
 
           /* Flip the sprite */
           .flipped {
-            transform: scaleX(-1) scale(2); /* Flip and scale the sprite */
+            transform: scaleX(-1) scale(1.3); /* Flip and scale the sprite */
           }
         `}
       </style>

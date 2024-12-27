@@ -90,14 +90,14 @@ function App() {
   return (
     
     <Router>
-      <div className="App" style={backgroundStyle}>
-      <video 
+      <div className="App" >
+      {/* <video 
         src="https://static.videezy.com/system/resources/previews/000/004/913/original/Christmas_Santa_Sleigh_Motion_Background_4K.mp4" 
         autoPlay
         muted
         loop
         style={backgroundStyle}
-      />
+      /> */}
         <Header />
         <Routes>
         <Route path="/" element={<div><Vision /><Offer /><Values /></div>} />
