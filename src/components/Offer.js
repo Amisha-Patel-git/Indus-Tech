@@ -88,7 +88,8 @@ const Offer = () => {
                 }
             }
         `}</style>
-        <div className="offers-container">
+        <div className="offers-container" style=
+        {{marginTop:200}}>
             {offerData.map((card)=>(
                     <div className="card" key={card.id} onClick={()=>handleCardClick(card.link)}>
                         <Player autoplay loop src={card.animationData} style={{ width: "150px", height: "150px" }} />

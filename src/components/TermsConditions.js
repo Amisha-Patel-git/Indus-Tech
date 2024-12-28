@@ -18,53 +18,45 @@ const TermsConditions=()=>{
     /* z-index: 1000; */
     /* overflow: hidden; */
     padding:15px;
-    margin-top:30px;
+    margin-top:30px;margin-top: 5.5%;
+            padding: 15px;
+            left: 0;
+            width: 100%;
+            min-height: 100vh; /* Ensures the container takes at least the full height of the viewport */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Ensure content is at the top */
+            background-color: #ffffe5; /* If you want a solid color background */
+            background-image: url('https://example.com/background.jpg'); /* Add your background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Makes background stay fixed while scrolling */
 }
 .terms-content{
     
-    width: 100%;
-    
-    
-    // background-color: #fff;
-    border-radius: 10px;
-    
-    overflow-y: auto;
-    /* overflow-x: auto; */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    /* position: relative; */
-    
-    margin-bottom: 5px;
-    /* top: 0;
-    left: 0; */
-    /* transform: translate(0,0); */
-    
-    /* height: 100%; */
-    
-    
-/*     
-    border-radius: 10px;
-    
-    text-align: center;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; */
+ width: 100%; /* Ensures content takes up the full width */
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: auto; /* Allows content to scroll if it exceeds the container's height */
+            margin-left: 10px; /* Adds a small left margin to align content */
+            text-align: left; /* Aligns text to the left */
 }
 .terms-content h1{
-    margin-bottom: 10px;
-    // font-size: 18px;
-    margin-top:5.5%;
+    margin-bottom: 20px;
+    font-size: 18px;
 }
 .terms-content p{
     font-size: 14px;
     line-height: 1.5;
     margin-bottom: 20px;
+    text-align: justify; /* Justify text to ensure it stretches across the full width */
 }
      @media (max-width: 768px) {
-          .terms-content {
-            padding: 15px;
-          }
+            .terms-content {
+              padding: 15px;
+              margin-top: 10%;
+              margin-left: 5px; /* Slightly reduce the left margin on smaller screens */
+            }
 
           .terms-content h1 {
             font-size: 20px;
@@ -80,10 +72,12 @@ const TermsConditions=()=>{
           }
         }
 
-        @media (max-width: 480px) {
-          .terms-content {
-            padding: 10px;
-          }
+        @media (max-width: 576px) {
+            .terms-content {
+              margin-top: 5%;
+              padding: 10px;
+              margin-left: 5px; /* Slightly reduce the left margin on mobile devices */
+            }
 
           .terms-content h1 {
             font-size: 18px;

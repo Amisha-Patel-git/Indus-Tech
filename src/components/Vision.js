@@ -74,6 +74,7 @@ const Vision=()=>{
 
             .vision-title {
               font-size: 22px;
+              color:white;
             }
 
             .highlighted-text {
@@ -111,19 +112,19 @@ const Vision=()=>{
         <section className="vision-section py-5">
           <div className="container d-flex align-items-center">
             <div className="vision-text w-50">
-              <h2 className="vision-title">Transforming Technology for <span className="highlighted-text">Your Business</span></h2>
-              <p className="vision-subtitle">
+              <h2 className="vision-title" style={{color:"white"}}> Transforming Technology for <span className="highlighted-text">Your Business</span></h2>
+              <p style={{color:"white", fontWeight:'bold'}}className="vision-subtitle">
                 Fueling Business Expansion with our Cutting-Edge Payment Solutions
               </p>
               <button className="btn get-started-btn" onClick={() => navigate("/signup")}>Get Started Today</button>
             </div>
 
-            <div className="lottie-animation w-50">
+            <div  className="lottie-animation w-50">
               <Player
                 autoplay
                 loop
                 src={"https://lottie.host/8dd7a97a-bae7-4290-a210-b2093d86a92c/Agchp1uLtK.json"}
-                style={{ width: "300px", height: "300px" }}
+                style={{ width: "300px", height: "300px" , marginLeft:300}}
               />
             </div>
           </div>

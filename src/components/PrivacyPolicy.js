@@ -5,76 +5,79 @@ const PrivacyPolicy = () => {
     <>
       <style>
         {`
-        .privacy
-    {
-    margin-top: 5.5%;
-    padding: 15px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-    .privacy-content{
-  
-  width: 100%;
-  // max-height: 90vh;
-  // overflow-y: auto;
-}
-
-.privacy-content h1{
-    margin-bottom: 20px;
-    font-size: 18px;
-}
-.privacy-content p{
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-    .privacy-content p strong {
-          font-weight: bold;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 768px) {
-          .privacy-content {
+          .privacy {
+            margin-top: 5.5%;
             padding: 15px;
-            margin-top: 10%;
+            left: 0;
+            width: 100%;
+            min-height: 100vh; /* Ensures the container takes at least the full height of the viewport */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Ensure content is at the top */
+            background-color: #ffffe5; /* If you want a solid color background */
+            background-image: url('https://example.com/background.jpg'); /* Add your background image */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Makes background stay fixed while scrolling */
           }
 
-          .privacy-content h1 {
-            font-size: 1.5rem;
-          }
-
-          .privacy-content p {
-            font-size: 0.95rem;
-          }
-
-          .privacy-content ul li p {
-            font-size: 0.95rem;
-          }
-        }
-
-        @media (max-width: 576px) {
           .privacy-content {
-            margin-top: 5%;
-            padding: 10px;
+            width: 100%; /* Ensures content takes up the full width */
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: auto; /* Allows content to scroll if it exceeds the container's height */
+            margin-left: 10px; /* Adds a small left margin to align content */
+            text-align: left; /* Aligns text to the left */
           }
 
           .privacy-content h1 {
-            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-size: 18px;
           }
 
           .privacy-content p {
-            font-size: 0.9rem;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            text-align: justify; /* Justify text to ensure it stretches across the full width */
           }
 
-          .privacy-content ul li p {
-            font-size: 0.9rem;
+          .privacy-content p strong {
+            font-weight: bold;
           }
-        }
 
+          /* Responsive styles */
+          @media (max-width: 768px) {
+            .privacy-content {
+              padding: 15px;
+              margin-top: 10%;
+              margin-left: 5px; /* Slightly reduce the left margin on smaller screens */
+            }
+
+            .privacy-content h1 {
+              font-size: 1.5rem;
+            }
+
+            .privacy-content p {
+              font-size: 0.95rem;
+            }
+          }
+
+          @media (max-width: 576px) {
+            .privacy-content {
+              margin-top: 5%;
+              padding: 10px;
+              margin-left: 5px; /* Slightly reduce the left margin on mobile devices */
+            }
+
+            .privacy-content h1 {
+              font-size: 1.2rem;
+            }
+
+            .privacy-content p {
+              font-size: 0.9rem;
+            }
+          }
         `}
       </style>
       <div className="privacy">
@@ -203,4 +206,3 @@ const PrivacyPolicy = () => {
 };
 
 export default PrivacyPolicy;
-
