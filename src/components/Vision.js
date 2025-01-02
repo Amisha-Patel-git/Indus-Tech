@@ -112,8 +112,8 @@ const Vision=()=>{
         <section className="vision-section py-5">
           <div className="container d-flex align-items-center">
             <div className="vision-text w-50">
-              <h2 className="vision-title" style={{color:"white"}}> Transforming Technology for <span className="highlighted-text">Your Business</span></h2>
-              <p style={{color:"white", fontWeight:'bold'}}className="vision-subtitle">
+              <h2 className="vision-title" style={{color:"black"}}> Transforming Technology for <span className="highlighted-text">Your Business</span></h2>
+              <p style={{color:"black", fontWeight:'bold'}}className="vision-subtitle">
                 Fueling Business Expansion with our Cutting-Edge Payment Solutions
               </p>
               <button className="btn get-started-btn" onClick={() => navigate("/signup")}>Get Started Today</button>
@@ -124,7 +124,7 @@ const Vision=()=>{
                 autoplay
                 loop
                 src={"https://lottie.host/8dd7a97a-bae7-4290-a210-b2093d86a92c/Agchp1uLtK.json"}
-                style={{ width: "300px", height: "300px" , marginLeft:300}}
+                style={{ width: "300px", height: "300px" , marginLeft:400}}
               />
             </div>
           </div>

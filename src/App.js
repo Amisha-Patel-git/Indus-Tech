@@ -20,7 +20,8 @@ import Escrow from "./components/Escrow";
 import ConnectedBanking from "./components/ConnectedBanking";
 import RegisterForm from "./components/RegisterForm";
 import TalkToExperts from "./components/TalkToExperts";
-
+import Medical from "./components/Medical";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 function App() {
   return (
     <Router>
@@ -38,7 +39,7 @@ function AppContent() {
 
   const backgroundStyle = {
     position: 'absolute',
-    top: 0,
+    top: 60,
     left: 0,
     width: '100%',
     height: '100%',
@@ -50,13 +51,15 @@ function AppContent() {
     <div className="App" style={backgroundStyle}>
       {/* Apply background video only if not on the PrivacyPolicy page */}
       {location.pathname !== '/privacypolicy' && location.pathname !== '/termsconditions' && (
-        <video 
-          src="https://marketplace.canva.com/EAGU4mTUajc/1/0/800w/canva-purple-gradient-happy-new-year-animated-video-aAm73VpdgWw.mp4" 
-          autoPlay
-          muted
-          loop
-          style={backgroundStyle}
-        />
+      
+        
+           <DotLottieReact
+             src="https://lottie.host/ab524af4-d223-42d0-9ed9-94c34a687f9e/2mAbFYs72n.lottie"
+             loop
+             autoplay
+             style={backgroundStyle}
+           />
+      
       )}
       <Header />
       <Routes>
@@ -75,6 +78,7 @@ function AppContent() {
         <Route path="/registerform" element={<RegisterForm />} />
         <Route path="/talktoexperts" element={<TalkToExperts />} />
         <Route path="/form" element={<Form />} />
+        <Route path="/MEF" element={<Medical />} />
       </Routes>
       <Footer />
     </div>

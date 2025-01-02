@@ -1,6 +1,7 @@
 import React, { useContext , useState,useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 
+
 const Footer = ({ isDarkMode, toggleTheme }) => {
 
 
@@ -156,14 +157,11 @@ const Footer = ({ isDarkMode, toggleTheme }) => {
         `}
       </style>
       <section className="footer-section">
-      <div
-          className={`santa ${flip ? 'flipped' : ''}`}
-          style={{ left: `${santaPosition}px` }}
-        ></div>
+     
         {/* <div className="footer-divider"></div> */}
         <div className="footer-container">
           <div className="footer-left">
-            <p>©Indus-Tech RMC. All Rights Reserved.</p>
+            <p>©Indus-Tech RMC. Pvt. Ltd. All Rights Reserved.</p>
           </div>
           
 
