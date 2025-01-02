@@ -21,7 +21,7 @@ import ConnectedBanking from "./components/ConnectedBanking";
 import RegisterForm from "./components/RegisterForm";
 import TalkToExperts from "./components/TalkToExperts";
 import Medical from "./components/Medical";
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { Player } from "@lottiefiles/react-lottie-player"; 
 function App() {
   return (
     <Router>
@@ -53,8 +53,8 @@ function AppContent() {
       {location.pathname !== '/privacypolicy' && location.pathname !== '/termsconditions' && (
       
         
-           <DotLottieReact
-             src="https://lottie.host/ab524af4-d223-42d0-9ed9-94c34a687f9e/2mAbFYs72n.lottie"
+           <Player
+             src="https://lottie.host/d2078de6-0ccd-45a8-8254-e640c553b964/G3JIZ5bNWe.json"
              loop
              autoplay
              style={backgroundStyle}

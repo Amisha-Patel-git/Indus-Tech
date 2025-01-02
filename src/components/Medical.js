@@ -1,12 +1,8 @@
-import React from 'react';
+import React from 'react'; 
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { FaCheckCircle } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-
-
-
+import { Player } from "@lottiefiles/react-lottie-player"; 
 
 const Medical = () => {
   return (
@@ -122,12 +118,13 @@ const LeasingOptions = () => (
                 e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
               }}
             >
-
-    <DotLottieReact
-      src={item.LottieAnimation}
-      loop
-      autoplay
-    />
+              {/* Replace DotLottieReact with LottiePlayer */}
+              <Player
+                src={item.LottieAnimation}
+                loop
+                autoplay
+                style={{ height: '200px', width: '200px', marginBottom: '20px' }}
+              />
   
               <Card.Body>
                 <Card.Title style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{item.title}</Card.Title>
@@ -227,16 +224,15 @@ const Footer = () => (
 
 // Leasing options data
 const leasingItems = [
-  { title: 'Medical Equipment', description: 'Lease advanced medical devices for healthcare professionals.',LottieAnimation:"https://lottie.host/6b69c78c-cd88-457d-b70a-a9600de89724/PESCJqMxPF.lottie"
-     },
-  { title: 'Plant and Machinery', description: 'Lease industrial machinery for your business needs.' ,LottieAnimation:"https://lottie.host/5754a2a1-1720-4298-ab22-3deeb80249f8/2rOd1FMAdt.lottie"},
-  { title: 'Laptop/ Desktop/ Printers', description: 'Access the latest IT hardware with leasing options.' ,LottieAnimation:"https://lottie.host/605a9b76-c434-45e5-8e9b-9f358e122830/Zy4nMHimGi.lottie"},
-  { title: 'Servers and Storage', description: 'Lease scalable server solutions to support your IT infrastructure.' ,LottieAnimation:"https://lottie.host/35bb482f-4b12-44d5-b5ed-b256855c0e4b/J07MmiNJaE.lottie"},
-  { title: 'Solar / E Buses', description: 'Sustainable energy solutions and electric buses for your business.',LottieAnimation:"https://lottie.host/39b2ddc0-7c4b-4392-aba1-d644551a5d9c/cSUh3jKzNJ.lottie" },
-  { title: 'Mobility / E-Communication Devices', description: 'Lease devices for improved communication and mobility.' ,LottieAnimation:"https://lottie.host/39b2ddc0-7c4b-4392-aba1-d644551a5d9c/cSUh3jKzNJ.lottie"},
-  { title: 'Construction Equipment', description: 'Lease heavy-duty construction equipment for projects.' ,LottieAnimation:"https://lottie.host/c85bfe77-e8c7-4aa6-b020-cb08b8e52def/nN5tibSwlg.lottie"},
-  { title: 'Commercial Vehicles', description: 'Lease commercial vehicles for your business logistics.',LottieAnimation:"https://lottie.host/39b2ddc0-7c4b-4392-aba1-d644551a5d9c/cSUh3jKzNJ.lottie" },
-  { title: 'Passenger Cars', description: 'Lease passenger cars for your corporate fleet.',LottieAnimation:"https://lottie.host/39b2ddc0-7c4b-4392-aba1-d644551a5d9c/cSUh3jKzNJ.lottie" },
+  { title: 'Medical Equipment', description: 'Lease advanced medical devices for healthcare professionals.', LottieAnimation: "https://lottie.host/3d7a5ae4-a40d-4040-94b1-2294dc5a5d18/7d4jHz0Hpq.json" },
+  { title: 'Plant and Machinery', description: 'Lease industrial machinery for your business needs.', LottieAnimation: "https://lottie.host/894090d9-5c8b-473b-a38c-151e9dd457fc/MsUL07dMoo.json" },
+  { title: 'Laptop/ Desktop/ Printers', description: 'Access the latest IT hardware with leasing options.', LottieAnimation: "https://lottie.host/47f9e7c0-07fb-41cf-85b5-35fda22a5bad/OazBToNVQR.json" },
+  { title: 'Servers and Storage', description: 'Lease scalable server solutions to support your IT infrastructure.', LottieAnimation: "https://lottie.host/c063cfb7-25c1-45ba-baba-6917c398cb7b/1ozt0UbEt9.json" },
+  { title: 'Solar / E Buses', description: 'Sustainable energy solutions and electric buses for your business.', LottieAnimation: "https://lottie.host/211d97e5-ea79-4a97-b912-900b8bd022f1/EZ8v5aGXM7.json" },
+  { title: 'Mobility / E-Communication Devices', description: 'Lease devices for improved communication and mobility.', LottieAnimation: "https://lottie.host/211d97e5-ea79-4a97-b912-900b8bd022f1/EZ8v5aGXM7.json" },
+  { title: 'Construction Equipment', description: 'Lease heavy-duty construction equipment for projects.', LottieAnimation: "https://lottie.host/6613c777-e380-4230-b013-dc4ba7d29599/hiqoBsWDST.json" },
+  { title: 'Commercial Vehicles', description: 'Lease commercial vehicles for your business logistics.', LottieAnimation: "https://lottie.host/211d97e5-ea79-4a97-b912-900b8bd022f1/EZ8v5aGXM7.json" },
+  { title: 'Passenger Cars', description: 'Lease passenger cars for your corporate fleet.', LottieAnimation: "https://lottie.host/211d97e5-ea79-4a97-b912-900b8bd022f1/EZ8v5aGXM7.json" },
 ];
 
 // Benefits list
