@@ -1,4 +1,4 @@
-import { Player } from "@lottiefiles/react-lottie-player"; 
+import { Player } from "@lottiefiles/react-lottie-player";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -53,19 +53,20 @@ const Offer = () => {
             <style>{`
                 .offers-container {
                     display: flex;
-                    justify-content: center;
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
                     align-items: center;
                     gap: 30px;
                     padding: 50px 20px;
                     background: white;
-                    min-height: 40h;
-                    flex-wrap: nowrap;  /* Ensures cards remain in a single row */
-                    margin-top:100px;
+                    min-height: 40vh;
+                    margin-top: 100px;
                 }
 
                 .card {
-                    width: 250px;
-                    height: 350px;
+                    flex: 1 1 250px;
+                    max-width: 300px;
+                    height: 400px;
                     background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
                     border-radius: 15px;
                     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -77,7 +78,8 @@ const Offer = () => {
                     align-items: center;
                     transition: transform 0.3s ease, box-shadow 0.3s ease;
                     overflow: hidden;
-                    animation: fadeIn 3s ease-out; /* Add fade-in effect */
+                    animation: fadeIn 3s ease-out;
+                    margin-bottom: 20px;
                 }
 
                 .card:hover {
@@ -91,13 +93,13 @@ const Offer = () => {
                     margin-top: 20px;
                     color: #333;
                     transition: color 0.3s ease;
+                    padding: 0 10px;  /* Added padding to make the title more readable */
                 }
 
                 .card:hover .card-title {
                     color: #FF6347;
                 }
 
-                /* Fade-in animation for cards */
                 @keyframes fadeIn {
                     from {
                         opacity: 0;
@@ -109,16 +111,60 @@ const Offer = () => {
                     }
                 }
 
+                /* For large screens */
+                @media screen and (min-width: 1200px) {
+                    .offers-container {
+                        display: flex;
+                        flex-wrap: nowrap;
+                    }
+                    .card {
+                        flex: 1 1 250px;
+                    }
+                }
+
+                /* For medium screens (768px and below) */
                 @media screen and (max-width: 768px) {
                     .card {
-                        width: 90%;
+                        flex: 1 1 100%;
+                        max-width: none;
+                        height: auto;  /* Allow cards to be flexible in height */
+                    }
+
+                    .card-title {
+                        font-size: 18px;
+                        padding: 0 10px;
+                    }
+
+                    .card .lottie-player {
+                        width: 60%;  /* Adjust the size of animation for smaller screens */
+                        height: auto;  /* Make sure height adjusts */
+                    }
+                }
+
+                /* For extra small screens (480px and below) */
+                @media screen and (max-width: 480px) {
+                    .card-title {
+                        font-size: 16px;
+                    }
+
+                    .card .lottie-player {
+                        width: 50%;  /* Make animation smaller */
+                        height: auto;  /* Maintain aspect ratio */
                     }
                 }
             `}</style>
             <div className="offers-container">
                 {offerData.map((card) => (
                     <div className="card" key={card.id} onClick={() => handleCardClick(card.link)}>
-                        <Player autoplay loop src={card.animationData} style={{ width: "200px", height: "200px" }} />
+                        <Player
+                            autoplay
+                            loop
+                            src={card.animationData}
+                            style={{
+                                width: "80%", // Ensure the animation stays within the card width
+                                height: "80%" // Ensure the animation stays within the card height
+                            }}
+                        />
                         <h3 className="card-title">{card.title}</h3>
                     </div>
                 ))}

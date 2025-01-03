@@ -8,7 +8,9 @@ const Medical = () => {
   return (
     <div style={{ fontFamily: 'Arial, sans-serif', overflowX: 'hidden' }}>
       <Header />
+      
       <LeasingOptions />
+    
       <Benefits />
       <Footer />
     </div>
@@ -87,7 +89,7 @@ const LeasingOptions = () => (
       animation: 'fadeInUp 1s ease-out',
     }}
   >
-    <Container>
+    <Container fluid>
       <h2
         style={{
           fontSize: '2.5rem',
@@ -98,9 +100,20 @@ const LeasingOptions = () => (
       >
         Our Leasing Options
       </h2>
-      <Row>
+      <Row
+        style={{
+          display: 'flex',
+          gap: '30px',  // Control spacing between cards
+        }}
+      >
         {leasingItems.map((item, index) => (
-          <Col md={4} key={index} className="mb-4">
+          <Col
+            xs={12}  // Full width on small screens
+            md={4}   // 3 columns on medium screens
+            lg={2}   // 6 columns on large screens
+            key={index}
+            className="mb-4"
+          >
             <Card
               style={{
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
@@ -118,17 +131,24 @@ const LeasingOptions = () => (
                 e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.1)';
               }}
             >
-              {/* Replace DotLottieReact with LottiePlayer */}
               <Player
                 src={item.LottieAnimation}
                 loop
                 autoplay
-                style={{ height: '200px', width: '200px', marginBottom: '20px' }}
+                style={{
+                  height: '40%',
+                  width: '80%',
+                  marginBottom: '20px',
+                  alignSelf: 'center',
+                }}
               />
-  
               <Card.Body>
-                <Card.Title style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>{item.title}</Card.Title>
-                <Card.Text style={{ color: '#555' }}>{item.description}</Card.Text>
+                <Card.Title style={{ fontSize: '1.5rem', fontWeight: 'bold' }}>
+                  {item.title}
+                </Card.Title>
+                <Card.Text style={{ color: '#555' }}>
+                  {item.description}
+                </Card.Text>
                 <Button
                   variant="outline-primary"
                   style={{
@@ -225,14 +245,13 @@ const Footer = () => (
 // Leasing options data
 const leasingItems = [
   { title: 'Medical Equipment', description: 'Lease advanced medical devices for healthcare professionals.', LottieAnimation: "https://lottie.host/3d7a5ae4-a40d-4040-94b1-2294dc5a5d18/7d4jHz0Hpq.json" },
-  { title: 'Plant and Machinery', description: 'Lease industrial machinery for your business needs.', LottieAnimation: "https://lottie.host/894090d9-5c8b-473b-a38c-151e9dd457fc/MsUL07dMoo.json" },
-  { title: 'Laptop/ Desktop/ Printers', description: 'Access the latest IT hardware with leasing options.', LottieAnimation: "https://lottie.host/47f9e7c0-07fb-41cf-85b5-35fda22a5bad/OazBToNVQR.json" },
-  { title: 'Servers and Storage', description: 'Lease scalable server solutions to support your IT infrastructure.', LottieAnimation: "https://lottie.host/c063cfb7-25c1-45ba-baba-6917c398cb7b/1ozt0UbEt9.json" },
-  { title: 'Solar / E Buses', description: 'Sustainable energy solutions and electric buses for your business.', LottieAnimation: "https://lottie.host/211d97e5-ea79-4a97-b912-900b8bd022f1/EZ8v5aGXM7.json" },
-  { title: 'Mobility / E-Communication Devices', description: 'Lease devices for improved communication and mobility.', LottieAnimation: "https://lottie.host/211d97e5-ea79-4a97-b912-900b8bd022f1/EZ8v5aGXM7.json" },
+  // { title: 'Plant and Machinery', description: 'Lease industrial machinery for your business needs.', LottieAnimation: "https://lottie.host/894090d9-5c8b-473b-a38c-151e9dd457fc/MsUL07dMoo.json" },
+  // { title: 'Laptop/ Desktop/ Printers', description: 'Access the latest IT hardware with leasing options.', LottieAnimation: "https://lottie.host/47f9e7c0-07fb-41cf-85b5-35fda22a5bad/OazBToNVQR.json" },
+  // { title: 'Servers and Storage', description: 'Lease scalable server solutions to support your IT infrastructure.', LottieAnimation: "https://lottie.host/c063cfb7-25c1-45ba-baba-6917c398cb7b/1ozt0UbEt9.json" },
+
   { title: 'Construction Equipment', description: 'Lease heavy-duty construction equipment for projects.', LottieAnimation: "https://lottie.host/6613c777-e380-4230-b013-dc4ba7d29599/hiqoBsWDST.json" },
-  { title: 'Commercial Vehicles', description: 'Lease commercial vehicles for your business logistics.', LottieAnimation: "https://lottie.host/211d97e5-ea79-4a97-b912-900b8bd022f1/EZ8v5aGXM7.json" },
-  { title: 'Passenger Cars', description: 'Lease passenger cars for your corporate fleet.', LottieAnimation: "https://lottie.host/211d97e5-ea79-4a97-b912-900b8bd022f1/EZ8v5aGXM7.json" },
+  // { title: 'Commercial Vehicles', description: 'Lease commercial vehicles for your business logistics.', LottieAnimation: "https://lottie.host/211d97e5-ea79-4a97-b912-900b8bd022f1/EZ8v5aGXM7.json" },
+  
 ];
 
 // Benefits list
