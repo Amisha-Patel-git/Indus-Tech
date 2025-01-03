@@ -59,26 +59,19 @@ const Vision = () => {
         }
 
         .highlighted-text {
-          font-family: "Libre Baskerville";
-          padding: 4px 12px;
-          font-size: 32px;
-          font-weight: bold;
-          color: #fff;
-          background: linear-gradient(45deg, #ff8c00, #f4a300);
-          text-transform: uppercase;
-          letter-spacing: 2px;
-          background-clip: text;
-          -webkit-background-clip: text;
-          box-shadow: 0 0 10px rgba(255, 165, 0, 0.7), 0 0 20px rgba(255, 165, 0, 0.5);
-          transition: all 0.3s ease;
-        }
+  font-family: "Libre Baskerville";
+  padding: 4px 12px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  /* Remove background-clip and set a solid background instead */
+  background: linear-gradient(45deg, #ff8c00, #f4a300);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.7), 0 0 20px rgba(255, 165, 0, 0.5);
+  display: inline-block;
+}
 
-        .highlighted-text:hover {
-          transform: scale(1.1);
-          color: #fff;
-          background: linear-gradient(45deg, #f4a300, #ff8c00);
-          text-shadow: 0 0 20px rgba(255, 165, 0, 0.8), 0 0 30px rgba(255, 165, 0, 0.6);
-        }
 
         .vision-subtitle {
           font-family: Arial, sans-serif;
