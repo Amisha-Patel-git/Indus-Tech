@@ -60,7 +60,7 @@ const Offer = () => {
                     padding: 50px 20px;
                     background: white;
                     min-height: 40vh;
-                    margin-top: 100px;
+                    margin-top: 10px;
                 }
 
                 .card {

@@ -217,7 +217,7 @@ const Vision = () => {
       <section className="vision-section py-5">
         <div className="container d-flex align-items-center flex-column">
           <div className="vision-text">
-            <h2 className="vision-title">
+            <h2 style={{marginTop:'5%'}}className="vision-title">
               Transforming Technology for{" "}
               <span className="highlighted-text">Your Business</span>
             </h2>
@@ -242,10 +242,10 @@ const Vision = () => {
                 "https://lottie.host/8dd7a97a-bae7-4290-a210-b2093d86a92c/Agchp1uLtK.json"
               }
               style={{
-                width: "250px",
-                height: "250px",
-                marginLeft: "85%",
-                marginTop: -100,
+                width: "30%",
+                height: "70%",
+                marginLeft: "70%",
+                marginTop: -300,
               }}
             />
           </div>

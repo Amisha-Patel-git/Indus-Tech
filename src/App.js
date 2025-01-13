@@ -50,17 +50,17 @@ function AppContent() {
   return (
     <div className="App" style={backgroundStyle}>
       {/* Apply background video only if not on the PrivacyPolicy page */}
-      {location.pathname !== '/privacypolicy' && location.pathname !== '/termsconditions' && (
+      {/* {location.pathname !== '/privacypolicy' && location.pathname !== '/termsconditions' && (
       
         
            <Player
-             src="https://lottie.host/d2078de6-0ccd-45a8-8254-e640c553b964/G3JIZ5bNWe.json"
+             src="https://lottie.host/8ebd81a1-c7a5-4285-8878-4e27c24e1697/21B4DtjjB9.json"
              loop
              autoplay
              style={backgroundStyle}
            />
       
-      )}
+      )} */}
       <Header />
       <Routes>
         <Route path="/" element={<div><Vision /><Offer /><Values /></div>} />
