@@ -1,0 +1,132 @@
+{
+    "privacyPolicy": {
+      "intro": {
+        "content": [
+          "This Privacy Policy outlines how we collect, use, disclose, retain, and safeguard your personal data when you interact with our website, services, or platforms. Our commitment to transparency and accountability ensures that your personal data is handled with the utmost care.",
+          "This Privacy Policy applies globally to all users, irrespective of their location, and ensures compliance with applicable regional and international data protection regulations, including GDPR, CCPA, and other relevant laws. By accessing our website or using our services, you consent to the practices described herein.",
+          "This Privacy Policy applies to all interactions you have with Indus-Tech RMC Private Limited, whether through our website, services, or digital platforms. It encompasses data collected online and offline, including information obtained from third-party integrations. It is important to note that this policy does not govern external websites linked from our site, and we encourage you to review the privacy policies of such external websites."
+        ]
+      },
+      "informationWeCollect": {
+        "title": "Information We Collect",
+        "content": [
+          "We collect information to provide tailored services and improve your experience. The data we collect can be categorized and defined as follows:",
+          "We collect personal information such as your name, address, contact details (email and phone number), job title, and government-issued identification data, including PAN or Aadhaar, as required for compliance purposes.",
+          "Behavioural data includes interaction patterns with our website and services, user preferences, interests, and feedback, which help us personalize your experience.",
+          "Technical data includes information such as browser type, device details, IP address, and geolocation. We also use cookies and tracking identifiers to enhance session management and usability.",
+          "Data that is no longer required for processing will be anonymized and used solely for research or statistical purposes.",
+          "We may collect data from device sensors, such as accelerometer or gyroscope data, when users access our services through mobile applications.",
+          "Any biometric data collected will be handled in strict compliance with applicable laws and will not be stored longer than necessary.",
+          "We do not process sensitive personal data unless explicitly required and consented to, such as during KYC processes or regulatory compliance."
+        ]
+      },
+      "methodsOfDataCollection": {
+        "title": "Methods of Data Collection",
+        "content": [
+          "We collect data through direct interactions when you provide information via registration, surveys, or inquiries. Additionally, automated technologies like cookies, web beacons, and logs capture data during your interaction with our website. We may also collect data from third-party sources such as affiliates, partners, or publicly available records, ensuring compliance with applicable laws."
+        ]
+      },
+      "useOfInformation": {
+        "title": "Use of Information",
+        "content": [
+          "Your data is processed for a variety of purposes aimed at enhancing your experience and ensuring compliance with our obligations. These purposes include:",
+          "We use your data to facilitate transactions, perform KYC processes, onboard customers, and deliver personalized services. This ensures a seamless experience tailored to your needs.",
+          "Your information is used to meet regulatory requirements, address legal inquiries, and detect and prevent fraudulent activities. Compliance with applicable laws is a cornerstone of our operations.",
+          "We may use your data to send service updates, promotional offers, and other notifications relevant to your interaction with us. We also use feedback from surveys to improve our offerings.",
+          "Analysing behavioural data to monitor user behaviour, optimize performance, and improve our security measures. This data-driven approach ensures continuous improvement in our services."
+        ]
+      },
+      "legalBasisForProcessing": {
+        "title": "Legal Basis for Processing",
+        "content": [
+          "Our processing of your data is grounded in several legal bases:",
+          "Consent: We rely on your explicit consent for specific uses of your data.",
+          "Contractual Necessity: Data is processed to fulfil agreements or provide requested services.",
+          "Legal Compliance: We adhere to legal obligations requiring data processing.",
+          "Legitimate Interests: We use data to enhance services, ensure security, and prevent fraud while respecting your rights."
+        ]
+      },
+      "dataSharingAndDisclosure": {
+        "title": "Data Sharing and Disclosure",
+        "content": [
+          "Where data is transferred outside of the country or region, we ensure compliance with applicable laws through mechanisms such as Standard Contractual Clauses or Binding Corporate Rules.",
+          "In the event of a merger, acquisition, or sale of assets, your data may be transferred to the acquiring entity, subject to the terms of this Privacy Policy.",
+          "Data shared during legal audits or due diligence processes will be limited to the extent necessary and governed by confidentiality agreements.",
+          "We may share data with third-party vendors for AI or machine learning applications to enhance services, ensuring that such data is anonymized where feasible."
+        ]
+      },
+      "dataSecurity": {
+        "title": "Data Security",
+        "content": [
+          "In the event of a data breach, we will notify affected users and relevant authorities within the timeframes mandated by applicable laws and will take immediate action to mitigate risks.",
+          "Regular security audits, penetration testing, and compliance assessments are conducted to ensure robust data protection.",
+          "All employees with access to personal data undergo periodic data protection and cybersecurity training to ensure adherence to the highest standards."
+        ]
+      },
+      "dataRetention": {
+        "title": "Data Retention",
+        "content": [
+          "Retention periods are determined based on legal, operational, and business needs, and are reviewed periodically to ensure compliance with applicable laws.",
+          "Transaction-related data may be retained for a period of 10 years to comply with financial regulations and audit requirements.",
+          "Upon request or when no longer needed, your data is securely deleted following certified data destruction processes.",
+          "We only collect the minimum data necessary to achieve the stated purposes and periodically review data collection practices to ensure compliance with this principle."
+        ]
+      },
+      "yourRights": {
+        "title": "Your Rights",
+        "content": [
+          "Under applicable laws, you have the following rights concerning your personal data:",
+          "Right to Access: You may request access to the personal data we hold about you and obtain a copy for review.",
+          "Right to Rectification: If your data is inaccurate or incomplete, you can request corrections to ensure accuracy.",
+          "Right to Erasure: You have the right to request deletion of your data, subject to legal or operational limitations.",
+          "Right to Restrict Processing: You may request a temporary suspension of data processing for specific purposes.",
+          "Right to Data Portability: We provide your data in a structured, machine-readable format upon request, facilitating its transfer to other service providers.",
+          "Right to Object: You can object to data processing, particularly for direct marketing or purposes based on legitimate interests.",
+          "Automated Decision-Making: You may request human intervention in decisions made solely through automated processes."
+        ]
+      },
+      "cookiesAndTracking": {
+        "title": "Cookies and Tracking",
+        "content": [
+          "Cookies and similar tracking technologies are used to enhance your experience. These small files help us understand user behaviour and preferences. Essential cookies necessary for functionality are always enabled to ensure seamless operation.",
+          "Some cookies used on our website may be set by third-party providers. We recommend reviewing their respective privacy policies for more information.",
+          "Users can customize their cookie preferences dynamically through our cookie management tool, which provides options to enable or disable different categories of cookies such as functional, performance, and advertising cookies."
+        ]
+      },
+      "thirdPartyIntegrations": {
+        "title": "Third-Party Integrations",
+        "content": [
+          "Our services may integrate with third-party platforms, including payment gateways, analytics tools, and advertising networks.",
+          "We ensure that third-party service providers adhere to data protection standards, but we are not liable for their independent data handling practices beyond contractual obligations. These platforms are governed by their respective privacy policies, and we encourage you to review them for a comprehensive understanding of their practices."
+        ]
+      },
+      "childrensPrivacy": {
+        "title": "Children’s Privacy",
+        "content": [
+          "Our services are designed for individuals aged 18 and above. We do not knowingly collect data from minors without explicit parental consent. If we become aware of such data collection, it is promptly deleted."
+        ]
+      },
+      "grievanceRedressal": {
+        "title": "Grievance Redressal",
+        "content": [
+          "For concerns or complaints related to your data or this Privacy Policy, you may contact our Grievance Officer at:",
+          "Email: info@indus-tech.co.in",
+          "Address: AG-08 Tower A, Pioneer Urban Square, Sector 62, Gurgaon, 122102, India.",
+          "We aim to address all grievances within 15 working days."
+        ]
+      },
+      "updatesToPolicy": {
+        "title": "Updates to the Policy",
+        "content": [
+          "This Privacy Policy is subject to periodic updates to reflect changes in practices, regulations, or services. We will notify users of significant updates via our website or direct communication."
+        ]
+      },
+      "governingLaw": {
+        "title": "Governing Law and Dispute Resolution",
+        "content": [
+          "This policy is governed by the laws of India. Any disputes arising under this policy shall be resolved through arbitration in accordance with the Arbitration and Conciliation Act, 1996. The seat of arbitration will be Gurgaon, India."
+        ]
+      }
+    }
+  }
+  
